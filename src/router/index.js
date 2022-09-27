@@ -1,23 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Menu from '../components/Menu'
+import PotHomeScreen from '../components/PotHomeScreen'
+import PotSignup from '../components/PotSignup'
+import PotInfo from '../components/PotInfo'
+import PotLogin from '../components/PotLogin'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  {path : '/info', component: PotInfo },
+  {path : '/menu', component: Menu },
+  {path : '/pothomescreen', component : PotHomeScreen},
+  {path : '/signup', component :  PotSignup},
+  {path : '/login', component :  PotLogin},
+  {path : '/', component :  PotInfo},
+  {path : '*', component : PotInfo},
 ]
 
 const router = new VueRouter({
