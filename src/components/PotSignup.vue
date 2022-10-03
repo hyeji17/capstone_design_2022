@@ -56,7 +56,6 @@
                   <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']" placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
                 </v-col>
                 <v-checkbox label = "개인정보수집, 위치정보수집에 동의합니다." v-model="agree"> </v-checkbox>
-                <v-btn @click="SignIn()">회원가입</v-btn>
               </div>
             </v-form>
           </div>
@@ -76,7 +75,7 @@
 
 
 
-        <v-form ref="formFirst">
+        <!-- <v-form ref="formFirst">
           <div class =  "Name">
             <v-col>
               <h6>이름</h6>
@@ -108,7 +107,7 @@
             <v-checkbox label = "개인정보수집, 위치정보수집에 동의합니다." v-model="agree"> </v-checkbox>
             <v-btn @click="SignIn()">회원가입</v-btn>
           </div>
-        </v-form>
+        </v-form> -->
       </v-container>
   </v-main>
 </v-app>

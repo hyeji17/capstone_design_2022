@@ -2,6 +2,33 @@
 <v-app>
   <v-main>
       <v-container>
+<input type="hidden" id="anPageName" name="page" value="screen" />
+    <div class="container-center-horizontal">
+      <div class="screen screen" onclick="window.open('2.html', '_self');">
+        <div class="flex-col">
+          <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
+          <div class="text-59 dmsans-bold-eerie-black-24px">로그인</div>
+          <div class="text-60 dmsans-normal-masala-14px">전화번호로 로그인합니다.</div>
+          <div class="form">
+            <div class="title dmsans-normal-masala-12px">휴대전화번호</div>
+            <div class="overlap-group">
+              <div class="place-holder dmsans-normal-silver-chalice-14px">010-1234-5678</div>
+            </div>
+          </div>
+          <div class="form-1">
+            <div class="title dmsans-normal-masala-12px">인증번호</div>
+            <div class="overlap-group">
+              <p class="place-holder-1 dmsans-normal-silver-chalice-12px">
+                휴대전화로 발송된 인증번호 4자리를 입력하세요
+              </p>
+            </div>
+          </div>
+          <div class="button"><div class="login dmsans-bold-white-14px">로그인</div></div>
+        </div>
+        <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
+      </div>
+    </div>
+
         <v-form ref="formFirst">
           <div class = "PhoneNumber">
             <v-col>
@@ -28,6 +55,7 @@
 </template>
 
 <script>
+
 import {
   getAuth,
   signOut,
@@ -100,5 +128,141 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url("../../public/css/screen.css")
+/* screen - screen */
+
+/* .screen {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  border: 1px none;
+  cursor: pointer;
+  display: flex;
+  height: 812px;
+  overflow: hidden;
+  width: 375px;
+}
+
+.screen .flex-col {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 28px;
+  min-height: 684px;
+  width: 335px;
+}
+
+.screen .icon {
+  height: 23px;
+  margin-left: 1.0px;
+  width: 34px;
+}
+
+.screen .text-59 {
+  align-self: flex-start;
+  letter-spacing: -0.72px;
+  margin-left: 24px;
+  margin-top: 49px;
+  min-height: 31px;
+}
+
+.screen .text-60 {
+  letter-spacing: 0;
+  line-height: 19.2px;
+  margin-top: 15px;
+  min-height: 19px;
+  white-space: nowrap;
+  width: 287px;
+}
+
+.screen .form {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.0px;
+  margin-top: 37px;
+  min-height: 76px;
+  width: 334px;
+}
+
+.screen .title {
+  letter-spacing: 0;
+  line-height: 16.4px;
+  margin-left: 23px;
+  margin-top: -1px;
+  min-height: 16px;
+  white-space: nowrap;
+}
+
+.screen .overlap-group {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px solid;
+  border-color: var(--mercury);
+  border-radius: 15px;
+  display: flex;
+  height: 50px;
+  margin-top: 11px;
+  min-width: 334px;
+  padding: 14px 22px;
+}
+
+.screen .place-holder {
+  letter-spacing: 0;
+  line-height: 19.2px;
+  min-height: 19px;
+  white-space: nowrap;
+}
+
+.screen .form-1 {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.0px;
+  margin-top: 18px;
+  min-height: 76px;
+  width: 334px;
+}
+
+.screen .place-holder-1 {
+  letter-spacing: 0;
+  line-height: 16.4px;
+  min-height: 16px;
+  white-space: nowrap;
+}
+
+.screen .button {
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgb(249.26, 135.89, 31.24) 0%, rgb(255, 119.34, 76.5) 100%);
+  border: 1px none;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px #c942101a;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  margin-top: 289px;
+  padding: 15px 20px;
+  width: 335px;
+}
+
+.screen .login {
+  letter-spacing: -0.14px;
+  line-height: 21.3px;
+  margin-top: -1.00px;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen .job-finder-app-1 {
+  height: 4096px;
+  margin-left: 1424px;
+  margin-top: -466px;
+  object-fit: cover;
+  width: 974px;
+} */
+
 </style>
