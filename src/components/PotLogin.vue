@@ -9,26 +9,33 @@
           <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
           <div class="text-59 dmsans-bold-eerie-black-24px">로그인</div>
           <div class="text-60 dmsans-normal-masala-14px">전화번호로 로그인합니다.</div>
-          <div class="form">
-            <div class="title dmsans-normal-masala-12px">휴대전화번호</div>
-            <div class="overlap-group">
-              <div class="place-holder dmsans-normal-silver-chalice-14px">010-1234-5678</div>
-            </div>
+        <v-form ref="formFirst">
+          <div class = "PhoneNumber">
+            <v-col>
+              <h6> 휴대전화 번호</h6>
+              <h6> -포함해서 입력하세요 ex. 010-1234-5678</h6>
+              <v-text-field v-model = "phonenum" label = "phonenum" :rules="[value => !!value || '전화번호를 입력 하세요.']" placeholder="010-1234-5678"></v-text-field>
+              <div id = "recaptcha-container" ></div>
+              <v-btn @click="setKeyIdentifier()">인증받기</v-btn>
+            </v-col>
           </div>
-          <div class="form-1">
-            <div class="title dmsans-normal-masala-12px">인증번호</div>
-            <div class="overlap-group">
-              <p class="place-holder-1 dmsans-normal-silver-chalice-12px">
-                휴대전화로 발송된 인증번호 4자리를 입력하세요
-              </p>
-            </div>
+        </v-form>
+        <v-form ref="formSecond">
+          <div class = "IdentifierNum">
+            <v-col>
+              <h6>인증번호 입력</h6>
+              <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']"  placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
+            </v-col>
+          <div class="form-1"> 
+          <div class="button" @click="Login()"><div class="login dmsans-bold-white-14px" >로그인</div></div>
           </div>
-          <div class="button"><div class="login dmsans-bold-white-14px">로그인</div></div>
-        </div>
+          </div>
+        </v-form>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
+      </div>
     </div>
-
+<!-- 
         <v-form ref="formFirst">
           <div class = "PhoneNumber">
             <v-col>
@@ -48,7 +55,7 @@
             </v-col>
             <v-btn @click="Login()">로그인</v-btn>
           </div>
-        </v-form>
+        </v-form> -->
       </v-container>
   </v-main>
 </v-app>
@@ -129,10 +136,10 @@ export default {
 </script>
 
 <style scoped>
-@import url("../../public/css/screen.css")
+/* @import url("../../public/css/screen.css") */
 /* screen - screen */
 
-/* .screen {
+.screen {
   align-items: flex-start;
   background-color: var(--zircon);
   border: 1px none;
@@ -263,6 +270,6 @@ export default {
   margin-top: -466px;
   object-fit: cover;
   width: 974px;
-} */
+}
 
 </style>

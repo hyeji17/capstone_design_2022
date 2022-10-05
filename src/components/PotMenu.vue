@@ -23,80 +23,104 @@
           <div class="text-5">원하는 메뉴의 배달팟을<br />찾아보세요!</div>
           <div class="overlap-group-container-1">
             <div class="overlap-group-1">
-              <div class="rectangle"></div>
-              <div class="text valign-text-middle dmsans-normal-black-12px">치킨</div>
-              <div class="rectangle-1"></div>
-              <div class="text-1 dmsans-bold-black-24px">🍗</div>
+              <a href="/potsearch?category=chicken">
+                <div class="text valign-text-middle dmsans-normal-black-12px">치킨</div>
+                <div class="rectangle"></div>
+                <div class="rectangle-1"></div>
+                <div class="text-1 dmsans-bold-black-24px">🍗</div>
+              </a>
             </div>
             <div class="overlap-group-1">
-              <div class="rectangle-19"></div>
-              <div class="text-8 valign-text-middle dmsans-normal-black-12px">패스트푸드</div>
-              <div class="rectangle-20"></div>
-              <div class="text-9 dmsans-bold-black-24px">🍔</div>
+              <a href="/potsearch?category=fastfood">
+                <div class="rectangle-19"></div>
+                <div class="text-8 valign-text-middle dmsans-normal-black-12px">패스트푸드</div>
+                <div class="rectangle-20"></div>
+                <div class="text-9 dmsans-bold-black-24px">🍔</div>
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=pizza">
               <div class="rectangle"></div>
               <div class="text-6 valign-text-middle dmsans-normal-black-12px">피자</div>
               <div class="rectangle-1"></div>
               <div class="text-7 dmsans-bold-black-24px">🍕</div>
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=japanesefood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">일식</div>
               <div class="rectangle-1"></div>
               <div class="text-1 dmsans-bold-black-24px">🍣</div>
+              </a>
             </div>
           </div>
           <div class="overlap-group-container">
             <div class="overlap-group-1">
+              <a href="/potsearch?category=chinsesfood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">중식</div>
               <div class="rectangle-1"></div>
               <img class="x1" src="img/---------1@2x.png" alt="1" />
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=dessert">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">디저트</div>
               <div class="rectangle-1"></div>
               <div class="text-1 dmsans-bold-black-24px">🍰</div>
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=americanfood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">양식</div>
               <div class="rectangle-1"></div>
               <img class="x1-1" src="img/-------1@2x.png" alt="1" />
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=koreanfood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">한식</div>
               <div class="rectangle-1"></div>
               <img class="x1-2" src="img/---------1-1@2x.png" alt="1" />
+              </a>
             </div>
           </div>
           <div class="overlap-group-container">
             <div class="overlap-group-1">
+              <a href="/potsearch?category=bunsik">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">분식</div>
               <div class="rectangle-1"></div>
               <img class="x1-3" src="img/---------1-2@2x.png" alt="1" />
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=nightfood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">야식</div>
               <div class="rectangle-1"></div>
               <img class="x1-4" src="img/-------1-1@2x.png" alt="1" />
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=asianfood">
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">아시안</div>
               <div class="rectangle-1"></div>
               <img class="x2" src="img/---------2@2x.png" alt="2" />
+              </a>
             </div>
             <div class="overlap-group-1">
+              <a href="/potsearch?category=lunchbox">                
               <div class="rectangle"></div>
               <div class="text valign-text-middle dmsans-normal-black-12px">도시락</div>
               <div class="rectangle-1"></div>
               <img class="x1-5" src="img/--------1@2x.png" alt="1" />
+              </a>
             </div>
           </div>
           <div class="view" @click = "$router.push('/potsearch')">

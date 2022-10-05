@@ -6,6 +6,7 @@
     <div class="container-center-horizontal">
       <div class="screen2 screen">
         <div class="flex-col">
+          <div style = "height: 890px; overflow: auto">
           <img class="icon" src="img/icon-4@2x.svg" alt="Icon" />
           <div class="text-61 dmsans-bold-eerie-black-24px">회원가입</div>
           <p class="text-62 dmsans-normal-masala-14px">본인의 이름, 전화번호, 이메일 정보를 수집합니다.</p>
@@ -34,8 +35,7 @@
                 <div class="place-holder dmsans-normal-silver-chalice-14px">010-1234-5678</div>
               </div> -->
               <v-col>
-                <h6> 휴대전화 번호</h6>
-                <h6> -포함해서 입력하세요 </h6>
+                <h6> 휴대전화 번호(-포함해서 입력하세요)  </h6>
                 <v-text-field v-model = "phonenum" label = "phonenum" :rules="[value => !!value || '전화번호를 입력 하세요.']" placeholder="010-1234-5678"></v-text-field>
                 <div id = "recaptcha-container" ></div>
                 <v-btn @click="setKeyIdentifier()">인증받기</v-btn>
@@ -55,7 +55,7 @@
                   <h6>인증번호 입력</h6>
                   <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']" placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
                 </v-col>
-                <v-checkbox label = "개인정보수집, 위치정보수집에 동의합니다." v-model="agree"> </v-checkbox>
+                <v-checkbox label = "개인정보수집, 위치정보수집에 동의합니다." v-model="agree" class="type-here"> </v-checkbox>
               </div>
             </v-form>
           </div>
@@ -69,6 +69,7 @@
           </div>
         </div>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
+        </div>
       </div>
     </div>
 
@@ -192,5 +193,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
 </style>

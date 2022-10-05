@@ -19,6 +19,7 @@
             <img class="vector-2" src="img/vector-2@2x.svg" alt="Vector 2" />
           </div>
           <div class="text-41 valign-text-middle">배달팟의 주인장이 되어보세요!</div>
+          <v-btn @click = "create()">배달팟열기</v-btn>
           <div class="view-1">
             <div class="text-43 valign-text-middle inter-semi-bold-cape-cod-15px">메뉴 카테고리</div>
             <div class="overlap-group">
@@ -45,7 +46,7 @@
             </div>
             <div class="overlap-group-2">
               <!-- <div class="text-47 valign-text-bottom inter-normal-cape-cod-13px" contenteditable = "true">입력</div> -->
-              <textarea v-model="pot.contents" class="text-47 valign-text-bottom inter-normal-cape-cod-13px" placeholder="입력">
+              <textarea v-model="pot.contents" class="text-47 valign-text-bottom inter-normal-cape-cod-13px" placeholder="입력"></textarea>
               <img class="vector-1" src="img/vector-3@2x.svg" alt="Vector" />
             </div>
           </div>
@@ -54,6 +55,7 @@
             <div class="overlap-group3">
               <div :class="{'overlap-group-3': pot.sex === 'same'}" @click="pot.sex = 'same'"><div class="text-5-1 valign-text-bottom">동성만</div></div>
               <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div>
+              <!-- <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div> -->
               <input style="display: none" type="radio" v-model="pot.sex" value="same">
               <input style="display: none" type="radio" v-model="pot.sex" value="all">
             </div>
@@ -139,12 +141,19 @@ export default{
       title : '',
       contents : '',
       sex: 'same',
-      pickup : 'half'
+      pickup : 'half',
+      uid: null
     }
   }),
   methods: {
     check: function() {
       console.log(this.pot)
+    },
+    create: function(){
+      this.pot.uid = this.auth.currentUser?.uid || ''
+      console.log(this.pot)
+      push(ref(this.db, `pots`), this.pot)
+      this.$router.push("/potsearch")
     },
     firebaseCreateSet: function() {
       set(ref(this.db, `members`), {

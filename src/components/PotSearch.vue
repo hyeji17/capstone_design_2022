@@ -19,6 +19,9 @@
               <img class="filter-icon" src="img/filter-icon@2x.svg" alt="Filter Icon" />
             </div>
           </div>
+          <div>
+            <div v-for="(pot, index) in pots" :key="index">{{pot.title}} {{pot.category}}</div>
+          </div>
           <div class="bottombar">
             <div class="overlap-group2">
               <div class="group-411">
@@ -48,20 +51,7 @@
         </div>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
-    </div>
 
-    <div>
-        <span>근처의 팟을 찾아보세요!</span>
-        <div class="potlist">
-            <button @click = "filter"><img alt="logo" src="../assets/FilterSelector.png">
-            </button>
-        </div>
-
-        <div class="item_list"></div>
-        <div id="potlistadd">
-            <button @click = "filter"><img alt="logo" src="../assets/게시물추가.png">
-            </button> 
-        </div>
     </div>
 
 </v-container>
@@ -69,10 +59,54 @@
 <script>
 
 import "../../public/css/baedalpas-moeugi.css"
+import { getAuth } from 'firebase/auth'
+import { getDatabase, ref, query, onValue, off, orderByChild, equalTo } from 'firebase/database'
 
 export default{
   components: {
   },   
+  data: () => ({
+    auth: null,
+    db: null,
+    categories:[
+      {key : "chicken", value : "치킨"},
+      {key : "fastfood", value : "패스트푸드"},
+      {key : "pizza", value : "피자"},
+      {key : "japanesfood", value : "일식"},
+      {key : "chinesefood", value : "중식"},
+      {key : "dessert", value : "디저트"},
+      {key : "americanfood", value : "양식"},
+      {key : "koreanfood", value : "한식"},
+      {key : "bunsik", value : "분식"},
+      {key : "nightfood", value : "야식"},
+      {key : "asianfood", value : "아시안"},
+      {key : "lunchbox", value : "도시락"},
+    ],
+    pots: [],
+  }),
+  created() {
+    this.auth = getAuth()
+    this.db = getDatabase()
+    console.log('created')
+
+    // db에서 pots 가져오기
+    const category = this.$route.query.category
+    let dbRef
+    if (category) {
+      dbRef = query(ref(this.db, 'pots'), orderByChild('category'), equalTo(category))
+    } else {
+      dbRef = query(ref(this.db, 'pots'))
+    }
+    onValue(dbRef, (snapshot) => {
+      this.pots = snapshot.val()
+      snapshot.forEach((childSnapshot) => {
+        console.log(childSnapshot.key, childSnapshot.val())
+      })
+      off(dbRef)
+    }, {
+      onlyOnce: false
+    })
+  }
 }
 </script>
 
