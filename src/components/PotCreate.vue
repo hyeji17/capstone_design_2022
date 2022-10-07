@@ -1,15 +1,16 @@
 <template>
 <v-container>
-    <div>
+    <!-- <div>
       <button @click='firebaseCreateSet()'>Create Set (모두 삭제하고 생성)</button>
       <button @click='firebaseCreatePush()'>Create Push (고유 키를 생성하며 데이터 생성)</button>
       <button @click='firebaseRead()'>Read</button>
       <button @click='firebaseDelete()'>Delete</button>
       <button @click='firebaseUpdate()'>Update (해당 부분만 수정)</button>
-    </div>
+    </div> -->
 <input type="hidden" id="anPageName" name="page" value="-" />
     <div class="container-center-horizontal">
       <div class="x screen">
+             <div class="div" style="overflow-y: scroll; height: 800px;">
         <div class="flex-col">
           <div class="group-400">
             <div class="text-container">
@@ -19,7 +20,7 @@
             <img class="vector-2" src="img/vector-2@2x.svg" alt="Vector 2" />
           </div>
           <div class="text-41 valign-text-middle">배달팟의 주인장이 되어보세요!</div>
-          <v-btn @click = "create()">배달팟열기</v-btn>
+
           <div class="view-1">
             <div class="text-43 valign-text-middle inter-semi-bold-cape-cod-15px">메뉴 카테고리</div>
             <div class="overlap-group">
@@ -72,6 +73,38 @@
 
             </div>
           </div>
+<div class="view-5">
+          <div class="text-container-3">
+            <div class="text-81 valign-text-middle inter-semi-bold-cape-cod-15px">팟원수 설정</div>
+            <p class="text-83 valign-text-middle inter-semi-bold-gunsmoke-13px">
+              최소 1명 이상, 최대 10명 이하로 설정해주세요!
+            </p>
+          </div>
+          <div class="overlap-group">
+            <div class="text valign-text-bottom inter-normal-cape-cod-13px">
+              <input type="number" id="potNumber" name="number" placeholder="입력" min="2" max="10" value="2" style="border:0 solid black" v-model="pot.max"></div>
+            <img class="vector" src="img/vector@2x.svg" alt="Vector" />
+          </div>
+        </div>
+        <div class="view-container-1">
+          <div class="view-6">
+            <div class="text-container-4">
+              <div class="text-85 valign-text-middle inter-semi-bold-cape-cod-15px">오픈카톡 링크</div>
+              <div class="text-87 valign-text-middle">
+                (선택) 오픈카카오톡링크를 생성하여<br />팀원들에게 공유해주세요!
+              </div>
+            </div>
+            <div class="overlap-group">
+              <div class="text valign-text-bottom inter-normal-cape-cod-13px">
+                <input type="text" id="link" name="link" placeholder="입력" style="border:0 solid black" v-model="pot.openchat"></div>
+              <img class="vector" src="img/vector@2x.svg" alt="Vector" />
+            </div>
+          </div>
+          
+            <div class="view-7"><div class="text-84 valign-text-middle" @click="create()">배달팟 모으기</div></div>
+            <!-- <v-btn @click = "create()">배달팟열기</v-btn> -->
+        </div>
+
           <div class="overlap-group6">
             <div class="active-tip"></div>
             <div class="text-56 valign-text-middle">배달팟 열기</div>
@@ -105,6 +138,7 @@
         </div>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
+    </div>
     </div>
 
 </v-container>
@@ -142,6 +176,8 @@ export default{
       contents : '',
       sex: 'same',
       pickup : 'half',
+      max : '2',
+      openchat : '',
       uid: null
     }
   }),

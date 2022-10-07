@@ -4,7 +4,7 @@
       <v-container>
 <input type="hidden" id="anPageName" name="page" value="screen" />
     <div class="container-center-horizontal">
-      <div class="screen screen" onclick="window.open('2.html', '_self');">
+      <div class="screen screen" >
         <div class="flex-col">
           <!-- <div class="div" style="overflow-y: scroll; height: 800px;"> -->
           <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
@@ -28,15 +28,16 @@
               <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']"  placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
             </v-col>
           <div class="form-1"> 
-          <div class="button" @click="Login()"><div class="login dmsans-bold-white-14px" >로그인</div></div>
+          <div class="button" @click="Login()"><div class="login dmsans-bold-white-14px" style="top:-50px; postion:relative">로그인</div></div>
           </div>
           </div>
         </v-form>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
       </div>
-      <!-- </div> -->
-    </div>
+      </div>
+    <!-- </div> -->
+
 <!-- 
         <v-form ref="formFirst">
           <div class = "PhoneNumber">
