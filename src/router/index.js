@@ -7,6 +7,7 @@ import PotInfo from '../components/PotInfo'
 import PotLogin from '../components/PotLogin'
 import PotSearch from '../components/PotSearch'
 import PotCreate from '../components/PotCreate'
+import PotPost from '../components/PotPost'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,7 @@ const routes = [
   {path : '/potmenu', component: PotMenu },
   {path : '/pothomescreen', component : PotHomeScreen},
   {path : '/potsearch', component : PotSearch},
+  {path : '/potpost', component : PotPost},
   {path : '/potcreate', component : PotCreate},
   {path : '/signup', name: 'signup', component :  PotSignup},
   {path : '/login', name: 'login', component :  PotLogin},

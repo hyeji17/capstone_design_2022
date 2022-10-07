@@ -43,9 +43,10 @@
               </div>
             </div></a
           >
-          <div class="overlap-group-2" v-for="(pot, index) in pots" :key="index">
+          <div class="overlap-group-2" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?uid=${index}`)">
             <div class="group-43">
-              <div class="overlap-group-1"><div class="text-4 dmsans-bold-black-24px">{{categories[pot.category]}}</div></div>
+          
+              <div class="overlap-group-1"><div class="text-4 dmsans-bold-black-24px">{{categories[pot.category]}} </div></div>
               <div class="text-container">
                 <div class="text dmsans-bold-scarpa-flow-18px">{{pot.title}}</div>
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>
@@ -122,7 +123,7 @@
 </template>
 <script>
 
-import "../../public/css/baedalpas-moeugi.css"
+// import "../../public/css/baedalpas-moeugi.css"
 import { getAuth } from 'firebase/auth'
 import { getDatabase, ref, query, onValue, off, orderByChild, equalTo } from 'firebase/database'
 
@@ -165,7 +166,6 @@ export default{
   created() {
     this.auth = getAuth()
     this.db = getDatabase()
-    console.log('created')
 
     // db에서 pots 가져오기
     const category = this.$route.query.category
@@ -177,6 +177,7 @@ export default{
     }
     onValue(dbRef, (snapshot) => {
       this.pots = snapshot.val()
+      console.log(this.pots)
       snapshot.forEach((childSnapshot) => {
         console.log(childSnapshot.key, childSnapshot.val())
       })
