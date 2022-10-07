@@ -6,7 +6,7 @@
     <div class="container-center-horizontal">
       <div class="screen2 screen">
         <div class="flex-col">
-          <div style = "height: 890px; overflow: auto">
+        <div class="div" style="overflow-y: scroll; height: 800px;">
           <img class="icon" src="img/icon-4@2x.svg" alt="Icon" />
           <div class="text-61 dmsans-bold-eerie-black-24px">회원가입</div>
           <p class="text-62 dmsans-normal-masala-14px">본인의 이름, 전화번호, 이메일 정보를 수집합니다.</p>
@@ -53,7 +53,7 @@
               <div class = "IdentifierNum">
                 <v-col>
                   <h6>인증번호 입력</h6>
-                  <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']" placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
+                  <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']" placeholder="휴대전화로 발송된 인증번호 6자리를 입력하세요"></v-text-field>
                 </v-col>
                 <v-checkbox label = "개인정보수집, 위치정보수집에 동의합니다." v-model="agree" class="type-here"> </v-checkbox>
               </div>

@@ -6,6 +6,7 @@
     <div class="container-center-horizontal">
       <div class="screen screen" onclick="window.open('2.html', '_self');">
         <div class="flex-col">
+          <div class="div" style="overflow-y: scroll; height: 800px;">
           <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
           <div class="text-59 dmsans-bold-eerie-black-24px">로그인</div>
           <div class="text-60 dmsans-normal-masala-14px">전화번호로 로그인합니다.</div>
@@ -32,6 +33,7 @@
           </div>
         </v-form>
         <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
+      </div>
       </div>
       </div>
     </div>
