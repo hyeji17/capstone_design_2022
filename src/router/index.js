@@ -16,8 +16,8 @@ const routes = [
   {path : '/pothomescreen', component : PotHomeScreen},
   {path : '/potsearch', component : PotSearch},
   {path : '/potcreate', component : PotCreate},
-  {path : '/signup', component :  PotSignup},
-  {path : '/login', component :  PotLogin},
+  {path : '/signup', name: 'signup', component :  PotSignup},
+  {path : '/login', name: 'login', component :  PotLogin},
   {path : '/', component :  PotInfo},
   {path : '*', component : PotInfo},
 ]

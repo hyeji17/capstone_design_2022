@@ -39,6 +39,7 @@ export const firebaseAuth = {
     }
 
     thisComponent.confirmationResult.confirm(thisComponent.identifiernum).then(result => {
+      const url = thisComponent.$route.name === 'signup' ? '/login' : '/potmenu'
       console.log('전화번호 로그인 완료', result.user)
       // 최초 로그인인 경우 이름과 이메일 변경
       if (!result.user.displayName) {
@@ -47,11 +48,15 @@ export const firebaseAuth = {
           displayName: thisComponent.name
         }).then(() => {
           // 이메일 변경
-          updateEmail(thisComponent.auth.currentUser, thisComponent.email).catch(error => {
+          updateEmail(thisComponent.auth.currentUser, thisComponent.email).then(() => {
+            thisComponent.$router.push(url)
+          }).catch(error => {
             console.error('현 사이트에 동일한 이메일 있음', error)
           })
           // thisComponent.displayName = '테스트 유저'
         })
+      } else {
+        thisComponent.$router.push(url)
       }
     }).catch(error => {
       console.error(error)
