@@ -7,6 +7,7 @@
       <div class="screen screen" >
         <div class="flex-col">
           <!-- <div class="div" style="overflow-y: scroll; height: 800px;"> -->
+            <div style="overflow:auto; width:350px; height:800px;">
           <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
           <div class="text-59 dmsans-bold-eerie-black-24px">로그인</div>
           <div class="text-60 dmsans-normal-masala-14px">전화번호로 로그인합니다.</div>
@@ -36,7 +37,7 @@
       </div>
       </div>
       </div>
-    <!-- </div> -->
+    </div>
 
 <!-- 
         <v-form ref="formFirst">
@@ -142,42 +143,43 @@ export default {
 /* @import url("../../public/css/screen.css") */
 /* screen - screen */
 
-.screen {
-  align-items: flex-start;
+/* screen - login */
+
+.login {
+  align-items: center;
   background-color: var(--zircon);
   border: 1px none;
-  cursor: pointer;
   display: flex;
+  flex-direction: column;
   height: 812px;
-  overflow: hidden;
+  padding: 65px 0;
   width: 375px;
 }
 
-.screen .flex-col {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  margin-top: 28px;
-  min-height: 684px;
-  width: 335px;
-}
-
-.screen .icon {
+.login .icon {
   height: 23px;
   margin-left: 1.0px;
+  margin-top: 3px;
   width: 34px;
 }
 
-.screen .text-59 {
+.login .text-108 {
   align-self: flex-start;
+  color: var(--eerie-black);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-xxxxxl);
+  font-weight: 700;
   letter-spacing: -0.72px;
-  margin-left: 24px;
-  margin-top: 49px;
+  margin-left: 44px;
+  margin-top: 44px;
   min-height: 31px;
 }
 
-.screen .text-60 {
+.login .text-109 {
+  color: var(--masala);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-xl);
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 19.2px;
   margin-top: 15px;
@@ -186,18 +188,19 @@ export default {
   width: 287px;
 }
 
-.screen .form {
+.login .form {
   align-items: flex-start;
   border: 1px none;
   display: flex;
   flex-direction: column;
+  gap: 11px;
   margin-left: 1.0px;
   margin-top: 37px;
   min-height: 76px;
   width: 334px;
 }
 
-.screen .title {
+.login .title {
   letter-spacing: 0;
   line-height: 16.4px;
   margin-left: 23px;
@@ -206,7 +209,7 @@ export default {
   white-space: nowrap;
 }
 
-.screen .overlap-group {
+.login .overlap-group {
   align-items: flex-start;
   background-color: var(--white);
   border: 1px solid;
@@ -214,37 +217,50 @@ export default {
   border-radius: 15px;
   display: flex;
   height: 50px;
-  margin-top: 11px;
   min-width: 334px;
   padding: 14px 22px;
 }
 
-.screen .place-holder {
+.login .place-holder {
   letter-spacing: 0;
   line-height: 19.2px;
   min-height: 19px;
   white-space: nowrap;
 }
 
-.screen .form-1 {
+.login .form-1 {
   align-items: flex-start;
   border: 1px none;
   display: flex;
   flex-direction: column;
+  gap: 11px;
   margin-left: 1.0px;
   margin-top: 18px;
   min-height: 76px;
   width: 334px;
 }
 
-.screen .place-holder-1 {
+.login .place-holder-1 {
+  color: var(--silver-chalice);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-m);
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 16.4px;
   min-height: 16px;
   white-space: nowrap;
 }
 
-.screen .button {
+.login .login-button {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  height: 51px;
+  margin-top: 289px;
+  min-width: 335px;
+}
+
+.login .button {
   align-items: flex-start;
   background: linear-gradient(180deg, rgb(249.26, 135.89, 31.24) 0%, rgb(255, 119.34, 76.5) 100%);
   border: 1px none;
@@ -253,12 +269,11 @@ export default {
   display: flex;
   gap: 10px;
   justify-content: space-around;
-  margin-top: 289px;
   padding: 15px 20px;
   width: 335px;
 }
 
-.screen .login {
+.login .login-1 {
   letter-spacing: -0.14px;
   line-height: 21.3px;
   margin-top: -1.00px;
@@ -267,12 +282,5 @@ export default {
   width: fit-content;
 }
 
-.screen .job-finder-app-1 {
-  height: 4096px;
-  margin-left: 1424px;
-  margin-top: -466px;
-  object-fit: cover;
-  width: 974px;
-}
 
 </style>

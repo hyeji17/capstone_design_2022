@@ -29,7 +29,7 @@
             </div>
             <div class="filter"><img class="filter-icon" src="img/filter-icon@2x.svg" alt="Filter Icon" /></div>
           </div>
-          <a href="potpost-participants.html">
+          <!-- <a href="potpost-participants.html">
             <div class="post1">
               <div class="overlap-group">
                 <div class="group-43">
@@ -42,8 +42,8 @@
                 <div class="text-2 poppins-bold-tropical-rain-forest-20px">1/4</div>
               </div>
             </div></a
-          >
-          <div class="overlap-group-2" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?uid=${index}`)">
+          > -->
+          <div class="overlap-group-2" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?potid=${index}`)">
             <div class="group-43">
           
               <div class="overlap-group-1"><div class="text-4 dmsans-bold-black-24px">{{categories[pot.category]}} </div></div>
@@ -52,7 +52,7 @@
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>
               </div>
             </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">0/{{pot.max}}</div>
+            <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{headcounts[index]}} 1{{headcounts}}2 /{{pot.max}}</div>
           </div>
           <!-- <div class="overlap-group-2">
             <div class="group-43">
@@ -85,7 +85,7 @@
             <div class="text-2 poppins-bold-tropical-rain-forest-20px">4/6</div>
           </div> -->
         </div>
-        <a href="potcreate.html">
+        <a href="/potcreate">
           <div class="edit-icon">
             <img class="iconly-light-edit" src="img/iconly-light-edit-1@2x.svg" alt="Iconly/Light/Edit" /></div
         ></a>
@@ -148,9 +148,18 @@ export default{
     //   {key : "lunchbox", value : "도시락"},
     // ],
     categories:{
-      chicken : "🍔" ,
-      pizza : "🍔" ,
-
+      chicken : "🍗" ,
+      fastfood : "🍔",
+      pizza : "🍕" ,
+      japenesefood : "🍣",
+      chinesefood : "img/---------1@2x.png",
+      dessert : "🍰",
+      americanfood : "img/-------1@2x.png",
+      koreanfood : "img/---------1-1@2x.png",
+      bunsik : "img/---------1-2@2x.png",
+      nightfood : "img/-------1-1@2x.png",
+      asianfood : "img/---------2@2x.png",
+      lunchbox : "img/--------1@2x.png",
     },
     sexes: {
       same: "동성",
@@ -162,6 +171,7 @@ export default{
       yourhome : "팟원 집"
     },
     pots: [],
+    headcounts: {}
   }),
   created() {
     this.auth = getAuth()
@@ -177,11 +187,23 @@ export default{
     }
     onValue(dbRef, (snapshot) => {
       this.pots = snapshot.val()
-      console.log(this.pots)
       snapshot.forEach((childSnapshot) => {
-        console.log(childSnapshot.key, childSnapshot.val())
+        console.log('a', childSnapshot.key)
+        console.log('b', childSnapshot.val())
+        // parties 정보 가져오기
+        const dbRefParties = query(ref(this.db, 'parties'), orderByChild('potid'), equalTo(childSnapshot.key))
+        onValue(dbRefParties, (snapshot, index) => {
+          // this.pot = snapshot.val()
+          console.log('size', snapshot.size, index)
+          this.headcounts[childSnapshot.key] = snapshot.size
+          console.log(this.headcounts, this.headcounts[childSnapshot.key])
+          off(dbRefParties)
+        }, {
+          onlyOnce: false
+        })
       })
       off(dbRef)
+      console.log(this.pots)
     }, {
       onlyOnce: false
     })

@@ -39,7 +39,7 @@ export const firebaseAuth = {
     }
 
     thisComponent.confirmationResult.confirm(thisComponent.identifiernum).then(result => {
-      const url = thisComponent.$route.name === 'signup' ? '/login' : '/potmenu'
+      const url = thisComponent.$route.name === 'signup' ? '/login' : '/pothomescreen'
       console.log('전화번호 로그인 완료', result.user)
       // 최초 로그인인 경우 이름과 이메일 변경
       if (!result.user.displayName) {

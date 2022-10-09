@@ -21,13 +21,13 @@
             </div>
           </div>
           <div class="view">
-            <div class="overlap-group-1"><div class="text-64 dmsans-bold-black-24px">🍗</div></div>
+            <div class="overlap-group-1"><div class="text-64 dmsans-bold-black-24px"><img :src = "categories[pot.category]" /> </div></div>
             <div class="flex-col-1">
               <div class="overlap-group1">
-                <div class="text-62 valign-text-middle dmsans-bold-masala-24px">제목</div>
-                <div class="nn">n/N</div>
+                <div class="text-62 valign-text-middle dmsans-bold-masala-24px">{{pot.title}}</div>
+                <div class="nn">{{headcount}}/{{pot.max}}</div>
               </div>
-              <p class="text-63 valign-text-middle">{{sexes[pot.sex]}} / 픽업방식 / 거리</p>
+              <p class="text-63 valign-text-middle">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</p>
             </div>
           </div>
           <div class="overlap-group7">
@@ -35,22 +35,22 @@
               <div class="rectangle-10"></div>
               <div class="text-65">{{pot.contents}}</div>
             </div>
-            <a href="javascript:ShowOverlay('participationoverlay', 'animate-appear');">
-              <div class="participation">
+            <!-- <a href="javascript:ShowOverlay('participationoverlay', 'animate-appear');"> -->
+              <div class="participation"  v-if="auth.currentUser?.uid !== pot.uid">
                 <div class="overlap-group5">
                   <img
                     class="icon-paper_plane"
                     src="img/sf-symbol---arrow-triangle-turn-up-right-circle-fill@2x.svg"
                     alt="icon-paper_plane"
                   />
-                  <div class="label valign-text-middle">참여하기</div>
-                  <button @click="confirm()">confirm</button>
+                  <div v-if="auth.currentUser?.uid === pot.uid">작성자</div>
+                  <div class="label valign-text-middle" @click="confirm()">참여하기</div>
                 </div>
-              </div></a
-            >
+              </div>
+              <!-- </a> -->
           </div>
           <img class="partition" src="img/partition@2x.svg" alt="partition" />
-          <div class="overlap-group3">
+          <!-- <div class="overlap-group3">
             <div class="n valign-text-bottom dmsans-bold-masala-18px">N번째 팟원</div>
             <div class="text-6 valign-text-middle dmsans-normal-masala-13px">댓글참여세부내용</div>
             <img class="partition-1" src="img/-partition@2x.svg" alt="partition" />
@@ -59,7 +59,7 @@
             <div class="n-1 valign-text-bottom dmsans-bold-masala-18px">N번째 팟원</div>
             <div class="text-6 valign-text-middle dmsans-normal-masala-13px">댓글참여세부내용</div>
             <img class="partition-2" src="img/partition@2x.svg" alt="partition" />
-          </div>
+          </div> -->
           <div class="bottombar">
             <div class="overlap-group6">
               <div class="group-411">
@@ -92,7 +92,7 @@
       </div>
     </div>
     <!-- <div id="overlay-participationoverlay" class="overlay" style="min-height: 812px"> -->
-      <div class="container-center-horizontal">
+      <!-- <div class="container-center-horizontal">
         <div class="participationoverlay screen">
           <div class="overlap-group2">
             <div class="text-20 valign-text-middle dmsans-bold-masala-18px">해당 팟에 참여하시겠습니까?</div>
@@ -113,7 +113,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     <!-- </div> -->
     
 </v-container>
@@ -123,7 +123,7 @@
 
 <script>
 import { getAuth } from 'firebase/auth'
-import { getDatabase, ref, query, onValue, off } from 'firebase/database'
+import { getDatabase, ref, query, onValue, off, push, orderByChild, equalTo} from 'firebase/database'
 
 export default{
   components: {
@@ -146,9 +146,18 @@ export default{
     //   {key : "lunchbox", value : "도시락"},
     // ],
     categories:{
-      chicken : "🍔" ,
-      pizza : "🍔" ,
-
+      chicken : "🍗" ,
+      fastfood : "🍔",
+      pizza : "🍕" ,
+      japenesefood : "🍣",
+      chinesefood : "img/---------1@2x.png",
+      dessert : "🍰",
+      americanfood : "img/-------1@2x.png",
+      koreanfood : "img/---------1-1@2x.png",
+      bunsik : "img/---------1-2@2x.png",
+      nightfood : "img/-------1-1@2x.png",
+      asianfood : "img/---------2@2x.png",
+      lunchbox : "img/--------1@2x.png",
     },
     sexes: {
       same: "동성",
@@ -160,10 +169,17 @@ export default{
       yourhome : "팟원 집"
     },
     pot: {},
+    headcount: 0
   }),
   methods: {
     confirm: function() {
         const result = window.confirm('확인창')
+        if (result === true) {
+          push(ref(this.db, `parties`), {
+            potid: this.$route.query.potid,
+            uid: this.auth.currentUser?.uid
+          })
+        }
         console.log(result)
     }
   },
@@ -172,11 +188,21 @@ export default{
     this.db = getDatabase()
 
     // db에서 pots 가져오기
-    const dbRef = query(ref(this.db, `pots/${this.$route.query.uid}`))
+    const dbRef = query(ref(this.db, `pots/${this.$route.query.potid}`))
     onValue(dbRef, (snapshot) => {
       this.pot = snapshot.val()
       console.log(this.pot)
       off(dbRef)
+      // parties 정보 가져오기
+      const dbRefParties = query(ref(this.db, 'parties'), orderByChild('potid'), equalTo(this.$route.query.potid))
+      onValue(dbRefParties, (snapshot) => {
+        // this.pot = snapshot.val()
+        console.log('size', snapshot.size)
+        this.headcount = snapshot.size
+        off(dbRefParties)
+      }, {
+        onlyOnce: false
+      })
     }, {
       onlyOnce: false
     })
