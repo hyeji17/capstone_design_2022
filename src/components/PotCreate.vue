@@ -177,7 +177,7 @@ export default{
       sex: 'same',
       pickup : 'half',
       max : '2',
-      headcount : '0',
+      headcount : 1,
       openchat : '',
       uid: null
     }

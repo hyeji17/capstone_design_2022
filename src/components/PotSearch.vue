@@ -52,7 +52,7 @@
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>
               </div>
             </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{headcounts[index]}} 1{{headcounts}}2 /{{pot.max}}</div>
+            <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{pot.headcount}}/{{pot.max}}</div>
           </div>
           <!-- <div class="overlap-group-2">
             <div class="group-43">
@@ -190,17 +190,6 @@ export default{
       snapshot.forEach((childSnapshot) => {
         console.log('a', childSnapshot.key)
         console.log('b', childSnapshot.val())
-        // parties 정보 가져오기
-        const dbRefParties = query(ref(this.db, 'parties'), orderByChild('potid'), equalTo(childSnapshot.key))
-        onValue(dbRefParties, (snapshot, index) => {
-          // this.pot = snapshot.val()
-          console.log('size', snapshot.size, index)
-          this.headcounts[childSnapshot.key] = snapshot.size
-          console.log(this.headcounts, this.headcounts[childSnapshot.key])
-          off(dbRefParties)
-        }, {
-          onlyOnce: false
-        })
       })
       off(dbRef)
       console.log(this.pots)
