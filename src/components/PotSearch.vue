@@ -45,7 +45,7 @@
           > -->
           <div class="overlap-group-1" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?potid=${index}`)">
             <div class="group-43">
-              <div class="overlap-group"><div class="x1" > <img :src = "categories[pot.category]" /></div></div>
+              <div class="overlap-group"><div class="x1" > <img :src = "categories[pot.category]" style="position: relative; width: 56px; left: -12px; top: -7px;"/></div></div>
               <div class="text-container">
                 <div class="text dmsans-bold-scarpa-flow-18px">{{pot.title}}</div>
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>

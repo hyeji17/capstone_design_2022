@@ -1,5 +1,5 @@
 <template>
-<v-container>
+<v-container v-if="pot.uid">
 <input type="hidden" id="anPageName" name="page" value="potpost-participants" />
     <div class="container-center-horizontal">
       <div class="potpost-participants screen">

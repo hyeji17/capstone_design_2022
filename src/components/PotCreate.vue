@@ -90,8 +90,10 @@
             <div class="component">
                <div class="segmented-picker-option">
                 <div class="separator-1"></div>
-                <div :class="{'overlap-group-3': pot.sex === 'same'}" @click="pot.sex = 'same'">
+                <div :class="{'colornopro valign-text-middle dmsans-bold-white-13px': pot.sex === 'same'}" @click="pot.sex = 'same'">
+                <div :class="{'colornopro-option': pot.sex === 'same'}" @click="pot.sex = 'same'">
                 <div class="value valign-text-middle dmsans-medium-gunsmoke-13px">동성만</div>
+                </div>
                 </div>
               </div>
               <div class="segmented-picker-option-1">
