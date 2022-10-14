@@ -2,8 +2,11 @@ import {
   signInWithPhoneNumber,
   RecaptchaVerifier,
   updateProfile,
-  updateEmail
+  updateEmail,
+  onAuthStateChanged
 } from "firebase/auth";
+import {ref, query, onValue, orderByChild} from 'firebase/database'
+import { firebaseDB } from "./db";
 
 export const firebaseAuth = {
   setKeyIdentifier(thisComponent) {
@@ -63,4 +66,23 @@ export const firebaseAuth = {
       alert("인증번호를 다시 입력해주세요.")
     })
   },
+  onAuthStateChanged(thisComponent) {
+    onAuthStateChanged(thisComponent.auth, (user) => {
+      if (user) {
+        console.log('로그인', user.uid);
+        // 본인이 속한 pots 가져오기
+        // const dbRef = query(ref(thisComponent.db, 'pots'), orderByChild('uid'), equalTo(user.uid))
+        const dbRef = query(ref(thisComponent.db, 'pots'), orderByChild(`parties/${user.uid}`))
+        onValue(dbRef, (snapshot) => {
+          snapshot.forEach((childSnapshot) => {
+            firebaseDB.noti(thisComponent, childSnapshot.key)
+          })
+        }, {
+          onlyOnce: true
+        })
+      } else {
+        console.log("not logged in");
+      }
+    })
+  }
 };

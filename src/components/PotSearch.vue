@@ -51,7 +51,7 @@
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>
               </div>
             </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{pot.headcount}}/{{pot.max}}</div>
+            <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{Object.keys(pot.parties).length}}/{{pot.max}}</div>
           </div>
         </div>
         <a href="/potcreate">

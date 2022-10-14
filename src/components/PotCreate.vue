@@ -171,7 +171,7 @@
 <script>
 import { getAuth } from 'firebase/auth'
 import { getDatabase, ref, set, push, query, onValue, orderByChild, equalTo, off, remove, update } from 'firebase/database'
-
+import { firebaseDB } from '../firebase/db'
 
 export default{
   components: {
@@ -201,8 +201,9 @@ export default{
       sex: 'same',
       pickup : 'half',
       max : '2',
-      headcount : 1,
+      parties : {},
       openchat : '',
+      done : false,
       uid: null
     }
   }),
@@ -212,8 +213,13 @@ export default{
     },
     create: function(){
       this.pot.uid = this.auth.currentUser?.uid || ''
+      this.pot.parties[this.pot.uid]= {
+        doneNotiOwner : true, // 방장 알림제외
+        doneNotiParty : true // 참여자 모집 마감 알림 제외
+      }
+      const {key } = push(ref(this.db, `pots`), this.pot)
+      firebaseDB.noti(this, key)
       console.log(this.pot)
-      push(ref(this.db, `pots`), this.pot)
       this.$router.push("/potsearch")
     },
     firebaseCreateSet: function() {
