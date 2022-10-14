@@ -56,104 +56,114 @@
           <div class="text-103 valign-text-middle">배달팟의 주인장이 되어보세요!</div>
 
           <div class="view-1">
-            <div class="text-105 valign-text-middle inter-semi-bold-cape-cod-15px">메뉴 카테고리</div>
+            <div class="text-105 valign-text-middle dmsans-semi-bold-cape-cod-15px">메뉴 카테고리</div>
             <div class="overlap-group-1">
               <v-select :items="categories" item-text="value" item-value="key" label = "선택" v-model="pot.category" @change="check()"></v-select> 
-              <!-- <div class="text-4 valign-text-bottom inter-normal-cape-cod-13px">선택</div> -->
-              <!-- <img class="vector" src="img/vector@2x.svg" alt="Vector" /> -->
             </div>
           </div>
           <div class="view">
             <div class="text-container-1">
-              <div class="text-1-1 valign-text-middle inter-semi-bold-cape-cod-15px">제목</div>
-              <p class="text-1-2 valign-text-middle inter-semi-bold-gunsmoke-13px">위치와 메뉴가 한눈에 드러나게 적어주세요!</p>
+              <div class="text-1-1 valign-text-middle dmsans-semi-bold-cape-cod-15px">제목</div>
+              <p class="text-1-2 valign-text-middle dmsans-semi-bold-gunsmoke-13px">위치와 메뉴가 한눈에 드러나게 적어주세요!</p>
             </div>
             <div class="overlap-group-1">
-              <!-- <div class="text-4 valign-text-bottom inter-normal-cape-cod-13px" contenteditable = "true">입력</div> -->
-              <input class="text-1 valign-text-bottom inter-normal-cape-cod-13px" v-model="pot.title" placeholder="입력">
+              <input class="text-1 valign-text-bottom dmsans-normal-cape-cod-13px" v-model="pot.title" placeholder="입력">
               <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
             </div>
           </div>
           <div class="view">
             <div class="text-container-2">
-              <div class="text-1-1 valign-text-middle inter-semi-bold-cape-cod-15px">내용</div>
-              <p class="text-1-2 valign-text-middle inter-semi-bold-gunsmoke-13px">진행방식과 참고사항에 대해 자세히 적어주세요!</p>
+              <div class="text-1-1 valign-text-middle dmsans-semi-bold-cape-cod-15px">내용</div>
+              <p class="text-1-2 valign-text-middle dmsans-semi-bold-gunsmoke-13px">진행방식과 참고사항에 대해 자세히 적어주세요!</p>
             </div>
             <div class="overlap-group-2">
-              <!-- <div class="text-47 valign-text-bottom inter-normal-cape-cod-13px" contenteditable = "true">입력</div> -->
-              <textarea v-model="pot.contents" class="text-109 valign-text-bottom inter-normal-cape-cod-13px" placeholder="입력"></textarea>
+              <textarea v-model="pot.contents" class="text-109 valign-text-bottom dmsans-normal-cape-cod-13px" placeholder="입력"></textarea>
               <img class="vector-1" src="img/vector-8@2x.svg" alt="Vector" />
             </div>
           </div>
           <div class="view-2">
-            <div class="text-11 valign-text-middle inter-semi-bold-cape-cod-15px">선호 성별</div>
+            <div class="text-11 valign-text-middle dmsans-semi-bold-cape-cod-15px">선호 성별</div>
             <div class="component">
-               <div class="segmented-picker-option">
+               <!-- <div class="segmented-picker-option"> -->
                 <div class="separator-1"></div>
-                <div :class="{'colornopro valign-text-middle dmsans-bold-white-13px': pot.sex === 'same'}" @click="pot.sex = 'same'">
-                <div :class="{'colornopro-option': pot.sex === 'same'}" @click="pot.sex = 'same'">
-                <div class="value valign-text-middle dmsans-medium-gunsmoke-13px">동성만</div>
+                <div class="gender-picker-only" v-if="pot.sex === 'same'">
+                  <!-- <div class="coloronly-option"><div class="coloronly valign-text-middle dmsans-bold-white-13px"><label for="sexSame">동성만</label></div></div/> -->
+                  <div class="coloronly-option"><div class="coloronly valign-text-middle dmsans-bold-white-13px"><label for="sexSame">동성만</label></div></div>
+                  <div class="nopro-option"><div class="nopro valign-text-middle dmsans-normal-gunsmoke-12px"><label for="sexAll">상관X</label></div></div>
                 </div>
+                <div class="gender-picker-nopro" v-if="pot.sex === 'all'">
+                    <div class="only-option"><div class="only valign-text-middle dmsans-normal-gunsmoke-12px"><label for="sexSame">동성만</label></div></div>
+                    <div class="colornopro-option"><div class="colornopro valign-text-middle dmsans-bold-white-13px"><label for="sexAll">상관X</label></div></div>
                 </div>
-              </div>
-              <div class="segmented-picker-option-1">
-                <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'">
-                <div class="value-1 valign-text-middle dmsans-medium-gunsmoke-13px">상관X</div></div>
-              </div>
-
-              <div :class="{'overlap-group-3': pot.sex === 'same'}" @click="pot.sex = 'same'"><div class="text-5-1 valign-text-bottom">동성만</div></div>
-              <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div>
-              <input style="display: none" type="radio" v-model="pot.sex" value="same">
-              <input style="display: none" type="radio" v-model="pot.sex" value="all">
-              <!-- <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div> -->
+              <!-- </div> -->
+              <input style="display: none" type="radio" v-model="pot.sex" value="same" id="sexSame">
+              <input style="display: none" type="radio" v-model="pot.sex" value="all" id="sexAll">
             </div>
           </div>
           <div class="view-3">
-            <div class="text-11 valign-text-middle inter-semi-bold-cape-cod-15px">픽업 방식</div><div class="component">
+            <div class="text-11 valign-text-middle dmsans-semi-bold-cape-cod-15px">픽업 방식</div><div class="component">
+              
+             <div class="pickup-picker-myhome" v-if="pot.pickup === 'myhome'">
+              <div class="colormyhome-option">
+                <div class="colormyhome valign-text-middle dmsans-bold-white-13px"><label for="myHome">우리집픽업</label></div>
+              </div>
+              <div class="x-option"><div class="middle valign-text-middle dmsans-medium-gunsmoke-13px"><label for="middle">중간지점픽업</label></div></div>
               <div class="x-option">
                 <div class="separator"></div>
-                <div class="myhome valign-text-middle dmsans-medium-gunsmoke-13px">우리집픽업</div>
+                <div class="others valign-text-middle dmsans-medium-gunsmoke-13px"><label for="yourHome">남의집픽업</label></div>
               </div>
-              <div class="x-option">
-                <div class="separator"></div>
-                <div class="others valign-text-middle dmsans-medium-gunsmoke-13px">남의집픽업</div>
+            </div> 
+
+              <div class="pickup-picker-others" v-if="pot.pickup === 'yourhome'">
+                <div class="e-option">
+                  <div class="separator"></div>
+                  <div class="myhome valign-text-middle dmsans-medium-gunsmoke-13px"><label for="myHome">우리집픽업</label></div>
+                </div>
+                <div class="e-option"><div class="middle valign-text-middle dmsans-medium-gunsmoke-13px"><label for="middle">중간지점픽업</label></div></div>
+                <div class="colorothers-option">
+                  <div class="colorothers valign-text-middle dmsans-bold-white-13px"><label for="yourHome">남의집픽업</label></div>
+                </div>
               </div>
-              <div class="x-option">
-                <div class="middle valign-text-middle dmsans-medium-gunsmoke-13px">중간지점픽업</div>
+              
+              <div class="pickup-picker-middle" v-if="pot.pickup === 'half'">
+                <div class="x-option">
+                  <div class="separator"></div>
+                  <div class="mythome valign-text-middle dmsans-medium-gunsmoke-13px"><label for="myHome">우리집픽업</label></div>
+                </div>
+                <div class="colormiddle-option">
+                  <div class="colormiddle valign-text-middle dmsans-bold-white-13px"><label for="middle">중간지점픽업</label></div>
+                </div>
+                <div class="x-option"><div class="others valign-text-middle dmsans-medium-gunsmoke-13px"><label for="yourHome">남의집픽업</label></div></div>
               </div>
-            <div class="overlap-group4">
-              <div :class="{'overlap-group-4': pot.pickup === 'myhome'}" @click="pot.pickup = 'myhome'"><div class="text-54 valign-text-bottom inter-semi-bold-gunsmoke-15px">우리집픽업</div></div>
-              <div :class="{'overlap-group-4': pot.pickup === 'half'}" @click="pot.pickup = 'half'"><div class="text-5-1 valign-text-bottom">중간지점픽업</div></div>
-              <div :class="{'overlap-group-4': pot.pickup === 'yourhome'}" @click="pot.pickup = 'yourhome'"><div class="text-52 valign-text-bottom inter-semi-bold-gunsmoke-15px">남의집픽업</div></div>
-              <input style="display: none" type="radio" v-model="pot.pickup" value="myhome">
-              <input style="display: none" type="radio" v-model="pot.pickup" value="yourhome">
-              <input style="display: none" type="radio" v-model="pot.pickup" value="half">
-            </div>
+             
+              <input style="display: none" type="radio" v-model="pot.pickup" value="myhome" id="myHome">
+              <input style="display: none" type="radio" v-model="pot.pickup" value="yourhome" id="yourHome">
+              <input style="display: none" type="radio" v-model="pot.pickup" value="half" id="middle">
 
             </div>
           </div>
           <div class="view-4">
           <div class="text-container-3">
-            <div class="text-114 valign-text-middle inter-semi-bold-cape-cod-15px">팟원수 설정</div>
-            <p class="text-116 valign-text-middle inter-semi-bold-gunsmoke-13px">
+            <div class="text-114 valign-text-middle dmsans-semi-bold-cape-cod-15px">팟원수 설정</div>
+            <p class="text-116 valign-text-middle dmsans-semi-bold-gunsmoke-13px">
               최소 1명 이상, 최대 10명 이하로 설정해주세요!
             </p>
           </div>
           <div class="overlap-group-1">
-            <div class="text-1 valign-text-bottom inter-normal-cape-cod-13px">
+            <div class="text-1 valign-text-bottom dmsans-normal-cape-cod-13px">
               <input type="number" id="potNumber" name="number" placeholder="입력" min="2" max="10" value="2" style="border:0 solid black" v-model="pot.max"></div>
             <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
           </div>
         </div>
           <div class="view-5">
             <div class="text-container-4">
-              <div class="text-118 valign-text-middle inter-semi-bold-cape-cod-15px">오픈카톡 링크</div>
+              <div class="text-118 valign-text-middle dmsans-semi-bold-cape-cod-15px">오픈카톡 링크</div>
               <div class="text-120 valign-text-middle">
                 (선택) 오픈카카오톡링크를 생성하여<br />팀원들에게 공유해주세요!
               </div>
             </div>
             <div class="overlap-group-1">
-              <div class="text-1 valign-text-bottom inter-normal-cape-cod-13px">
+              <div class="text-1 valign-text-bottom dmsans-normal-cape-cod-13px">
                 <input type="text" id="link" name="link" placeholder="입력" style="border:0 solid black" v-model="pot.openchat"></div>
               <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
             </div>
@@ -488,7 +498,7 @@ export default{
 .potcreate .text-103 {
   align-self: flex-start;
   color: var(--masala);
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-dm_sans);
   font-size: var(--font-size-xxxl);
   font-weight: 700;
   height: 24px;
@@ -844,7 +854,7 @@ export default{
 
 .potcreate .text-120 {
   color: var(--gunsmoke);
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-dm_sans);
   font-size: var(--font-size-s);
   font-weight: 600;
   height: 36px;
@@ -870,7 +880,7 @@ export default{
 
 .potcreate .text-117 {
   color: #fcfcfe;
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-dm_sans);
   font-size: var(--font-size-xxxl);
   font-weight: 700;
   height: 23px;
@@ -904,6 +914,11 @@ export default{
 }
 
 .only {
+  color: var(--gunsmoke);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -930,6 +945,11 @@ export default{
 }
 
 .colornopro {
+  color: var(--white);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -971,6 +991,11 @@ export default{
 }
 
 .coloronly {
+  color: var(--white);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -992,6 +1017,11 @@ export default{
 }
 
 .nopro {
+color: var(--gunsmoke);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -1076,6 +1106,11 @@ export default{
 }
 
 .colormiddle {
+  color: var(--white);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -1117,6 +1152,11 @@ export default{
 }
 
 .colormyhome {
+  color: var(--white);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;
@@ -1233,6 +1273,11 @@ export default{
 }
 
 .colorothers {
+  color: var(--white);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
   height: 16px;
   left: 8px;
   letter-spacing: -0.08px;

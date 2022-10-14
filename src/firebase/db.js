@@ -45,6 +45,10 @@ export const firebaseDB = {
           thisComponent.pot.parties[key].doneNotiOwner = true
         }
         update(ref(thisComponent.db, `pots/${thisComponent.$route.query.potid}/parties`), thisComponent.pot.parties)
+      } else if (thisComponent.pot.done && !thisComponent.pot.parties[thisComponent.auth.currentUser?.uid].doneNotiParty) {
+        update(ref(thisComponent.db, `pots/${thisComponent.$route.query.potid}/parties/${thisComponent.auth.currentUser?.uid}`), {
+          doneNotiParty: true
+        })
       }
     }, {
       onlyOnce: false

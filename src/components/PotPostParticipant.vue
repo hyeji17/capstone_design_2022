@@ -44,6 +44,12 @@
               <div class="label valign-text-middle dmsans-bold-white-17px" @click="confirm()">참여하기</div>
             </div>
           </div>
+            <img class="partition" src="img/partition@2x.svg" alt="partition" />
+          <div class="overlap-group3" v-if="pot.done">
+            <div class="n valign-text-bottom dmsans-bold-masala-18px">오픈채팅방링크</div>
+            <div class="text valign-text-middle dmsans-normal-masala-13px">{{pot.openchat}}</div>
+            <img class="partition-1" src="img/-partition@2x.svg" alt="partition" />
+          </div>
           <div class="bottombar">
             <div class="overlap-group6">
               <div class="group-411">

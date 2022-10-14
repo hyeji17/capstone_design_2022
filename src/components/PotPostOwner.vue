@@ -152,7 +152,9 @@ export default{
         const result = window.confirm('참여하시겠습니까?')
         if (result === true) {
             this.pot.parties[this.auth.currentUser?.uid] = {
-                doneNotiOwner: false
+                doneNotiOwner: false,
+                doneNotiParty : false
+
             }
             update(ref(this.db, `pots/${this.$route.query.potid}/parties`), this.pot.parties)
         }
