@@ -7,23 +7,57 @@
       <button @click='firebaseDelete()'>Delete</button>
       <button @click='firebaseUpdate()'>Update (해당 부분만 수정)</button>
     </div> -->
-<input type="hidden" id="anPageName" name="page" value="-" />
+<input type="hidden" id="anPageName" name="page" value="potcreate" />
     <div class="container-center-horizontal">
-      <div class="x screen">
-             <div class="div" style="overflow-y: scroll; height: 800px;">
-        <div class="flex-col">
-          <div class="group-400">
-            <div class="text-container">
-              <div class="text-39 valign-text-middle dmsans-normal-eerie-black-14px">위치</div>
-              <div class="text-40 valign-text-middle dmsans-normal-red-orange-15px">우리집</div>
+      <div class="potcreate screen">
+        <div class="bottombar">
+          <div class="overlap-group4">
+            <div class="group-411">
+              <div class="iconly-light-search">
+                <div class="overlap-group">
+                  <div class="ellipse_739"></div>
+                  <img class="line_181" src="img/line-181-3@2x.svg" alt="Line_181" />
+                </div>
+              </div>
+              <img class="group-411-item" src="img/chat-3@2x.svg" alt="chat" />
+              <div class="iconly-light-search-1">
+                <div class="overlap-group">
+                  <div class="ellipse_739-1"></div>
+                  <img class="line_181" src="img/line-181-2@2x.svg" alt="Line_181" />
+                </div>
+              </div>
+              <img
+                class="iconly-light-notification"
+                src="img/iconly-light-notification@2x.svg"
+                alt="Iconly/Light/Notification"
+              />
+              <img class="group-411-item" src="img/profile@2x.svg" alt="profile" />
             </div>
-            <img class="vector-2" src="img/vector-2@2x.svg" alt="Vector 2" />
+            <div class="icon"><img class="icon-logo" src="img/icon-logo-5@2x.svg" alt="Icon/Logo" /></div>
           </div>
-          <div class="text-41 valign-text-middle">배달팟의 주인장이 되어보세요!</div>
+        </div>
+         <!-- <div style="overflow:auto; width:350px; height:800px;"></div> -->
+          <div class="ation-container">
+            <a href="javascript:history.back()"
+              ><img
+                class="variants-navigation-button"
+                src="img/variants-navigation-button-5@2x.svg"
+                alt="Variants/Navigation Button"
+              />
+            </a>
+        <div class="create-component">
+            <div class="location">
+              <div class="text-container">
+                <div class="text-101 valign-text-middle dmsans-normal-eerie-black-14px">위치</div>
+                <div class="text-102 valign-text-middle dmsans-normal-red-orange-15px">우리집</div>
+              </div>
+              <img class="vector-2" src="img/vector-2@2x.svg" alt="Vector 2" />
+            </div>
+          <div class="text-103 valign-text-middle">배달팟의 주인장이 되어보세요!</div>
 
           <div class="view-1">
-            <div class="text-43 valign-text-middle inter-semi-bold-cape-cod-15px">메뉴 카테고리</div>
-            <div class="overlap-group">
+            <div class="text-105 valign-text-middle inter-semi-bold-cape-cod-15px">메뉴 카테고리</div>
+            <div class="overlap-group-1">
               <v-select :items="categories" item-text="value" item-value="key" label = "선택" v-model="pot.category" @change="check()"></v-select> 
               <!-- <div class="text-4 valign-text-bottom inter-normal-cape-cod-13px">선택</div> -->
               <!-- <img class="vector" src="img/vector@2x.svg" alt="Vector" /> -->
@@ -31,38 +65,60 @@
           </div>
           <div class="view">
             <div class="text-container-1">
-              <div class="text-4-1 valign-text-middle inter-semi-bold-cape-cod-15px">제목</div>
-              <p class="text-4-2 valign-text-middle">위치와 메뉴가 한눈에 드러나게 적어주세요!</p>
+              <div class="text-1-1 valign-text-middle inter-semi-bold-cape-cod-15px">제목</div>
+              <p class="text-1-2 valign-text-middle inter-semi-bold-gunsmoke-13px">위치와 메뉴가 한눈에 드러나게 적어주세요!</p>
             </div>
-            <div class="overlap-group">
+            <div class="overlap-group-1">
               <!-- <div class="text-4 valign-text-bottom inter-normal-cape-cod-13px" contenteditable = "true">입력</div> -->
-              <input class="text-4 valign-text-bottom inter-normal-cape-cod-13px" v-model="pot.title" placeholder="입력">
-              <img class="vector" src="img/vector@2x.svg" alt="Vector" />
+              <input class="text-1 valign-text-bottom inter-normal-cape-cod-13px" v-model="pot.title" placeholder="입력">
+              <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
             </div>
           </div>
           <div class="view">
             <div class="text-container-2">
-              <div class="text-4-1 valign-text-middle inter-semi-bold-cape-cod-15px">내용</div>
-              <p class="text-4-2 valign-text-middle">진행방식과 참고사항에 대해 자세히 적어주세요!</p>
+              <div class="text-1-1 valign-text-middle inter-semi-bold-cape-cod-15px">내용</div>
+              <p class="text-1-2 valign-text-middle inter-semi-bold-gunsmoke-13px">진행방식과 참고사항에 대해 자세히 적어주세요!</p>
             </div>
             <div class="overlap-group-2">
               <!-- <div class="text-47 valign-text-bottom inter-normal-cape-cod-13px" contenteditable = "true">입력</div> -->
-              <textarea v-model="pot.contents" class="text-47 valign-text-bottom inter-normal-cape-cod-13px" placeholder="입력"></textarea>
-              <img class="vector-1" src="img/vector-3@2x.svg" alt="Vector" />
+              <textarea v-model="pot.contents" class="text-109 valign-text-bottom inter-normal-cape-cod-13px" placeholder="입력"></textarea>
+              <img class="vector-1" src="img/vector-8@2x.svg" alt="Vector" />
             </div>
           </div>
           <div class="view-2">
-            <div class="text-5 valign-text-middle inter-semi-bold-cape-cod-15px">선호 성별</div>
-            <div class="overlap-group3">
+            <div class="text-11 valign-text-middle inter-semi-bold-cape-cod-15px">선호 성별</div>
+            <div class="component">
+               <div class="segmented-picker-option">
+                <div class="separator-1"></div>
+                <div :class="{'overlap-group-3': pot.sex === 'same'}" @click="pot.sex = 'same'">
+                <div class="value valign-text-middle dmsans-medium-gunsmoke-13px">동성만</div>
+                </div>
+              </div>
+              <div class="segmented-picker-option-1">
+                <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'">
+                <div class="value-1 valign-text-middle dmsans-medium-gunsmoke-13px">상관X</div></div>
+              </div>
+
               <div :class="{'overlap-group-3': pot.sex === 'same'}" @click="pot.sex = 'same'"><div class="text-5-1 valign-text-bottom">동성만</div></div>
               <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div>
-              <!-- <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div> -->
               <input style="display: none" type="radio" v-model="pot.sex" value="same">
               <input style="display: none" type="radio" v-model="pot.sex" value="all">
+              <!-- <div :class="{'overlap-group-3': pot.sex === 'all'}" @click="pot.sex = 'all'"><div class="x-1 valign-text-bottom inter-semi-bold-gunsmoke-15px">상관X</div></div> -->
             </div>
           </div>
           <div class="view-3">
-            <div class="text-5 valign-text-middle inter-semi-bold-cape-cod-15px">픽업 방식</div>
+            <div class="text-11 valign-text-middle inter-semi-bold-cape-cod-15px">픽업 방식</div><div class="component">
+              <div class="x-option">
+                <div class="separator"></div>
+                <div class="myhome valign-text-middle dmsans-medium-gunsmoke-13px">우리집픽업</div>
+              </div>
+              <div class="x-option">
+                <div class="separator"></div>
+                <div class="others valign-text-middle dmsans-medium-gunsmoke-13px">남의집픽업</div>
+              </div>
+              <div class="x-option">
+                <div class="middle valign-text-middle dmsans-medium-gunsmoke-13px">중간지점픽업</div>
+              </div>
             <div class="overlap-group4">
               <div :class="{'overlap-group-4': pot.pickup === 'myhome'}" @click="pot.pickup = 'myhome'"><div class="text-54 valign-text-bottom inter-semi-bold-gunsmoke-15px">우리집픽업</div></div>
               <div :class="{'overlap-group-4': pot.pickup === 'half'}" @click="pot.pickup = 'half'"><div class="text-5-1 valign-text-bottom">중간지점픽업</div></div>
@@ -70,81 +126,47 @@
               <input style="display: none" type="radio" v-model="pot.pickup" value="myhome">
               <input style="display: none" type="radio" v-model="pot.pickup" value="yourhome">
               <input style="display: none" type="radio" v-model="pot.pickup" value="half">
+            </div>
 
             </div>
           </div>
-<div class="view-5">
+          <div class="view-4">
           <div class="text-container-3">
-            <div class="text-81 valign-text-middle inter-semi-bold-cape-cod-15px">팟원수 설정</div>
-            <p class="text-83 valign-text-middle inter-semi-bold-gunsmoke-13px">
+            <div class="text-114 valign-text-middle inter-semi-bold-cape-cod-15px">팟원수 설정</div>
+            <p class="text-116 valign-text-middle inter-semi-bold-gunsmoke-13px">
               최소 1명 이상, 최대 10명 이하로 설정해주세요!
             </p>
           </div>
-          <div class="overlap-group">
-            <div class="text valign-text-bottom inter-normal-cape-cod-13px">
+          <div class="overlap-group-1">
+            <div class="text-1 valign-text-bottom inter-normal-cape-cod-13px">
               <input type="number" id="potNumber" name="number" placeholder="입력" min="2" max="10" value="2" style="border:0 solid black" v-model="pot.max"></div>
-            <img class="vector" src="img/vector@2x.svg" alt="Vector" />
+            <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
           </div>
         </div>
-        <div class="view-container-1">
-          <div class="view-6">
+          <div class="view-5">
             <div class="text-container-4">
-              <div class="text-85 valign-text-middle inter-semi-bold-cape-cod-15px">오픈카톡 링크</div>
-              <div class="text-87 valign-text-middle">
+              <div class="text-118 valign-text-middle inter-semi-bold-cape-cod-15px">오픈카톡 링크</div>
+              <div class="text-120 valign-text-middle">
                 (선택) 오픈카카오톡링크를 생성하여<br />팀원들에게 공유해주세요!
               </div>
             </div>
-            <div class="overlap-group">
-              <div class="text valign-text-bottom inter-normal-cape-cod-13px">
+            <div class="overlap-group-1">
+              <div class="text-1 valign-text-bottom inter-normal-cape-cod-13px">
                 <input type="text" id="link" name="link" placeholder="입력" style="border:0 solid black" v-model="pot.openchat"></div>
-              <img class="vector" src="img/vector@2x.svg" alt="Vector" />
+              <img class="vector" src="img/vector-6@2x.svg" alt="Vector" />
             </div>
           </div>
           
-            <div class="view-7"><div class="text-84 valign-text-middle" @click="create()">배달팟 모으기</div></div>
+            <div class="view-6"><div class="text-117 valign-text-middle" @click="create()">배달팟 모으기</div></div>
             <!-- <v-btn @click = "create()">배달팟열기</v-btn> -->
         </div>
-
-          <div class="overlap-group6">
-            <div class="active-tip"></div>
-            <div class="text-56 valign-text-middle">배달팟 열기</div>
-            <div class="bottombar">
-              <div class="overlap-group5">
-                <div class="group-411">
-                  <div class="iconly-light-search">
-                    <div class="overlap-group-1">
-                      <div class="ellipse_739"></div>
-                      <img class="line_181" src="img/line-181-1@2x.svg" alt="Line_181" />
-                    </div>
-                  </div>
-                  <img class="group-411-item" src="img/chat-1@2x.svg" alt="chat" />
-                  <div class="iconly-light-search-1">
-                    <div class="overlap-group-1">
-                      <div class="ellipse_739-1"></div>
-                      <img class="line_181" src="img/line-181@2x.svg" alt="Line_181" />
-                    </div>
-                  </div>
-                  <img
-                    class="iconly-light-notification"
-                    src="img/iconly-light-notification-1@2x.svg"
-                    alt="Iconly/Light/Notification"
-                  />
-                  <img class="group-411-item" src="img/profile-2@2x.svg" alt="profile" />
-                </div>
-                <div class="icon"><img class="icon-logo" src="img/icon-logo-2@2x.svg" alt="Icon/Logo" /></div>
-              </div>
-            </div>
-          </div>
         </div>
-        <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
-    </div>
-    </div>
+          </div>
 
 </v-container>
 </template>
 <script>
-// import '../../public/css/-.css'
 import { getAuth } from 'firebase/auth'
 import { getDatabase, ref, set, push, query, onValue, orderByChild, equalTo, off, remove, update } from 'firebase/database'
 
@@ -254,373 +276,33 @@ export default{
 </script>
 
 <style scoped>
-/* screen - - */
+/* screen - potcreate */
 
-.x {
+.potcreate {
   align-items: flex-start;
   background-color: var(--zircon);
   border: 1px none;
   display: flex;
-  height: 812px;
+  height: 1138px;
   overflow: hidden;
   width: 375px;
 }
 
-.x .flex-col {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-left: -1px;
-  margin-top: 31px;
-  min-height: 781px;
-  width: 378px;
-}
-
-.x .group-400 {
-  align-items: center;
-  display: flex;
-  height: 45px;
-  margin-left: 32.0px;
-  min-width: 74px;
-}
-
-.x .text-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 45px;
-  width: 42px;
-}
-
-.x .text-39 {
-  height: 21px;
-  letter-spacing: -0.14px;
-  line-height: 21.3px;
-  margin-right: 2.0px;
-  min-width: 26px;
-  text-decoration: underline;
-  white-space: nowrap;
-}
-
-.x .text-40 {
-  height: 23px;
-  letter-spacing: -0.15px;
-  line-height: 22.8px;
-  margin-top: 1px;
-  min-width: 42px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.x .vector-2 {
-  height: 4px;
-  margin-bottom: 19.5px;
-  margin-left: 20px;
-  width: 8px;
-}
-
-.x .text-41 {
-  align-self: flex-start;
-  color: var(--black);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxxl);
-  font-weight: 700;
-  height: 24px;
-  letter-spacing: 0;
-  margin-left: 21px;
-  margin-top: 30px;
-  min-width: 255px;
-  text-align: center;
-}
-
-.x .view-1 {
-  align-items: flex-start;
-  border: 1px none;
-  display: flex;
-  flex-direction: column;
-  margin-right: 1.0px;
-  margin-top: 35px;
-  min-height: 77px;
-  width: 335px;
-}
-
-.x .text-43 {
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  margin-top: -1px;
-  white-space: nowrap;
-}
-
-.x .overlap-group {
-  align-items: center;
-  background-color: var(--concrete);
-  border-radius: 10px;
-  display: flex;
-  height: 36px;
-  justify-content: flex-end;
-  margin-top: 13px;
-  min-width: 335px;
-  padding: 0 14.5px;
-}
-
-.x .text-4 {
-  height: 13px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  white-space: nowrap;
-  width: 200px;
-}
-
-.x .vector {
-  height: 12px;
-  margin-left: 96px;
-  margin-top: 0.77px;
-  width: 10px;
-}
-
-.x .view {
-  align-items: flex-start;
-  border: 1px none;
-  display: flex;
-  flex-direction: column;
-  margin-right: 1.0px;
-  margin-top: 14px;
-  min-height: 77px;
-  width: 335px;
-}
-
-.x .text-container-1 {
-  height: 18px;
-  margin-top: -1px;
-  position: relative;
-  width: 265px;
-}
-
-.x .text-4-1 {
-  height: 18px;
-  left: 0;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  position: absolute;
-  top: 0;
-  white-space: nowrap;
-  width: 120px;
-}
-
-.x .text-4-2 {
-  color: var(--gunsmoke);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-l);
-  font-weight: 600;
-  height: 18px;
-  left: 34px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  position: absolute;
-  top: 0;
-  white-space: nowrap;
-}
-
-.x .text-container-2 {
-  height: 18px;
-  margin-top: -1px;
-  position: relative;
-  width: 289px;
-}
-
-.x .overlap-group-2 {
-  align-items: flex-start;
-  background-color: var(--concrete);
-  border-radius: 10px;
-  display: flex;
-  height: 93px;
-  justify-content: flex-end;
-  margin-top: 13px;
-  min-width: 335px;
-  padding: 22.7px 14.5px;
-}
-
-.x .text-47 {
-  height: 34px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  width: 200px;
-}
-
-.x .vector-1 {
-  align-self: center;
-  height: 32px;
-  margin-left: 96px;
-  margin-top: 1.98px;
-  width: 10px;
-}
-
-.x .view-2 {
-  align-items: flex-start;
-  border: 1px none;
-  display: flex;
-  flex-direction: column;
-  height: 90px;
-  margin-right: 1.0px;
-  margin-top: 63px;
-  padding: 5px 0;
-  width: 351px;
-}
-
-.x .text-5 {
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  margin-left: 8px;
-  white-space: nowrap;
-}
-
-.x .overlap-group3 {
-  align-items: center;
-  align-self: center;
-  background-color: var(--concrete);
-  border-radius: 10px;
-  display: flex;
-  height: 47px;
-  margin-top: 13px;
-  min-width: 335px;
-  padding: 0 2px;
-}
-
-.x .overlap-group-3 {
-  align-items: flex-start;
-  background-color: var(--jewel);
-  border-radius: 10px;
-  display: flex;
-  height: 41px;
-  min-width: 168px;
-  padding: 11px 63px;
-}
-
-.x .text-5-1 {
-  color: var(--white);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxl);
-  font-weight: 600;
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
-.x .x-1 {
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  margin-bottom: 1.0px;
-  margin-left: 63px;
-  min-width: 38px;
-  white-space: nowrap;
-}
-
-.x .view-3 {
-  align-items: flex-start;
-  border: 1px none;
-  display: flex;
-  flex-direction: column;
-  height: 90px;
-  margin-right: 1.0px;
-  margin-top: 14px;
-  padding: 5px 0;
-  width: 351px;
-}
-
-.x .overlap-group4 {
-  align-items: center;
-  align-self: center;
-  background-color: var(--concrete);
-  border-radius: 10px;
-  display: flex;
-  height: 47px;
-  justify-content: flex-end;
-  margin-top: 13px;
-  min-width: 335px;
-  padding: 0 16px;
-}
-
-.x .text-54 {
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  margin-bottom: 1.0px;
-  min-width: 69px;
-  white-space: nowrap;
-}
-
-.x .overlap-group-4 {
-  align-items: flex-start;
-  background-color: var(--jewel);
-  border-radius: 10px;
-  display: flex;
-  height: 41px;
-  justify-content: flex-end;
-  margin-left: 20px;
-  min-width: 103px;
-  padding: 11px 16px;
-}
-
-.x .text-52 {
-  height: 18px;
-  letter-spacing: -0.08px;
-  line-height: 18px;
-  margin-bottom: 1.0px;
-  margin-left: 22px;
-  min-width: 83px;
-  white-space: nowrap;
-}
-
-.x .overlap-group6 {
-  height: 115px;
-  margin-top: 16px;
-  position: relative;
-  width: 378px;
-}
-
-.x .active-tip {
-  background-color: var(--jewel);
-  border: 1px none;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 73px;
-  left: 36px;
-  position: absolute;
-  top: 15px;
-  width: 306px;
-}
-
-.x .text-56 {
-  color: var(--cape-cod);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxxl);
-  font-weight: 700;
-  height: 24px;
-  left: 138px;
-  letter-spacing: 0;
-  position: absolute;
-  text-align: center;
-  top: 39px;
-}
-
-.x .bottombar {
+.potcreate .bottombar {
   align-items: flex-start;
   border: 1px none;
   display: flex;
   height: 115px;
-  left: 0;
+  left: -1px;
   min-width: 378px;
   padding: 0 1px;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 1023px;
+  z-index: 3;
 }
 
-.x .overlap-group5 {
-  background-image: url(../../public/img/rectangle-26-2@2x.svg);
+.potcreate .overlap-group4 {
+  background-image: url(../../public/img/rectangle-26-5@2x.svg);
   background-size: 100% 100%;
   height: 123px;
   margin-top: -8.25px;
@@ -628,7 +310,7 @@ export default{
   width: 375px;
 }
 
-.x .group-411 {
+.potcreate .group-411 {
   align-items: flex-end;
   display: flex;
   height: 40px;
@@ -638,7 +320,7 @@ export default{
   top: 36px;
 }
 
-.x .iconly-light-search {
+.potcreate .iconly-light-search {
   align-items: flex-end;
   border: 1px none;
   display: flex;
@@ -648,13 +330,13 @@ export default{
   padding: 1.2px 1.7px;
 }
 
-.x .overlap-group-1 {
+.potcreate .overlap-group {
   height: 21px;
   position: relative;
   width: 20px;
 }
 
-.x .ellipse_739 {
+.potcreate .ellipse_739 {
   border: 1.5px solid;
   border-color: var(--silver-chalice);
   border-radius: 9.74px;
@@ -665,7 +347,7 @@ export default{
   width: 19px;
 }
 
-.x .line_181 {
+.potcreate .line_181 {
   height: 5px;
   left: 15px;
   position: absolute;
@@ -673,13 +355,13 @@ export default{
   width: 5px;
 }
 
-.x .group-411-item {
+.potcreate .group-411-item {
   height: 24px;
   margin-left: 35px;
   width: 24px;
 }
 
-.x .iconly-light-search-1 {
+.potcreate .iconly-light-search-1 {
   align-items: flex-end;
   align-self: flex-start;
   border: 1px none;
@@ -691,7 +373,7 @@ export default{
   padding: 1.2px 1.7px;
 }
 
-.x .ellipse_739-1 {
+.potcreate .ellipse_739-1 {
   border: 1.5px solid;
   border-color: var(--white);
   border-radius: 9.74px;
@@ -702,13 +384,13 @@ export default{
   width: 19px;
 }
 
-.x .iconly-light-notification {
+.potcreate .iconly-light-notification {
   height: 24px;
   margin-left: 53px;
   width: 24px;
 }
 
-.x .icon {
+.potcreate .icon {
   align-items: flex-end;
   background-color: var(--soft-peach);
   border: 1px none;
@@ -723,17 +405,847 @@ export default{
   top: 14px;
 }
 
-.x .icon-logo {
+.potcreate .icon-logo {
   height: 27px;
   width: 39px;
 }
 
-.x .job-finder-app-1 {
-  height: 4096px;
-  margin-left: 1477px;
-  margin-top: -1388px;
-  object-fit: cover;
-  width: 974px;
+.potcreate .variants-navigation-button {
+  height: 80px;
+  left: 0;
+  position: fixed;
+  top: 43px;
+  width: 75px;
+  z-index: 2;
+}
+
+.potcreate .create-component {
+  align-items: center;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-top: 57px;
+  min-height: 951px;
+  width: 352px;
+  z-index: 1;
+}
+
+.potcreate .location {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  gap: 20px;
+  height: 45px;
+  margin-left: 28.0px;
+  min-width: 70px;
+}
+
+.potcreate .text-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: -1px;
+  min-height: 45px;
+  width: 42px;
+}
+
+.potcreate .text-101 {
+  height: 21px;
+  letter-spacing: -0.14px;
+  line-height: 21.3px;
+  margin-right: 2.0px;
+  min-width: 26px;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.potcreate .text-102 {
+  height: 23px;
+  letter-spacing: -0.15px;
+  line-height: 22.8px;
+  min-width: 42px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.potcreate .vector-2 {
+  align-self: center;
+  height: 4px;
+  margin-bottom: 19.5px;
+  width: 8px;
+}
+
+.potcreate .text-103 {
+  align-self: flex-start;
+  color: var(--masala);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  height: 24px;
+  letter-spacing: 0;
+  margin-left: 8px;
+  margin-top: 30px;
+  min-width: 255px;
+  text-align: center;
+}
+
+.potcreate .view-1 {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-right: 1.0px;
+  margin-top: 35px;
+  min-height: 77px;
+  width: 335px;
+}
+
+.potcreate .text-105 {
+  height: 18px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  margin-top: -1px;
+  white-space: nowrap;
+}
+
+.potcreate .overlap-group-1 {
+  align-items: center;
+  background-color: var(--mystic);
+  border-radius: 10px;
+  display: flex;
+  gap: 96px;
+  height: 36px;
+  justify-content: flex-end;
+  min-width: 335px;
+  padding: 0 14.5px;
+}
+
+.potcreate .text-1 {
+  height: 13px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.potcreate .vector {
+  height: 12px;
+  margin-top: 0.77px;
+  width: 10px;
+}
+
+.potcreate .view {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-right: 1.0px;
+  margin-top: 14px;
+  min-height: 77px;
+  width: 335px;
+}
+
+.potcreate .text-container-1 {
+  height: 18px;
+  margin-top: -1px;
+  position: relative;
+  width: 265px;
+}
+
+.potcreate .text-1-1 {
+  height: 18px;
+  left: 0;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 120px;
+}
+
+.potcreate .text-1-2 {
+  height: 18px;
+  left: 34px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.potcreate .text-container-2 {
+  height: 18px;
+  margin-top: -1px;
+  position: relative;
+  width: 289px;
+}
+
+.potcreate .overlap-group-2 {
+  align-items: center;
+  background-color: var(--mystic);
+  border-radius: 10px;
+  display: flex;
+  gap: 28px;
+  height: 93px;
+  justify-content: flex-end;
+  min-width: 335px;
+  padding: 11px 14.5px;
+}
+
+.potcreate .text-109 {
+  align-self: flex-end;
+  height: 68px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  width: 268px;
+}
+
+.potcreate .vector-1 {
+  height: 12px;
+  margin-top: 3.26px;
+  width: 10px;
+}
+
+.potcreate .view-2 {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  height: 90px;
+  margin-right: 1.0px;
+  margin-top: 67px;
+  padding: 5px 0;
+  width: 351px;
+}
+
+.potcreate .text-11 {
+  height: 18px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.potcreate .component {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.potcreate .segmented-picker-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 165.5px;
+  position: relative;
+}
+
+.potcreate .separator-1 {
+  background-color: var(--ship-gray);
+  border: 0px none;
+  border-radius: 0.5px;
+  height: 16px;
+  left: 163px;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.potcreate .value {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.potcreate .segmented-picker-option-1 {
+  border: 0.5px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 165.5px;
+  position: relative;
+}
+
+.potcreate .value-1 {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.potcreate .view-3 {
+  align-items: flex-start;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  height: 90px;
+  margin-right: 1.0px;
+  margin-top: 10px;
+  padding: 5px 0;
+  width: 351px;
+}
+
+.potcreate .x-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 110.33px;
+  position: relative;
+}
+
+.potcreate .separator {
+  background-color: var(--ship-gray);
+  border: 0px none;
+  border-radius: 0.5px;
+  height: 16px;
+  left: 108px;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.potcreate .myhome {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.potcreate .others {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.potcreate .middle {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.potcreate .view-4 {
+  align-items: center;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  height: 90px;
+  margin-right: 1.0px;
+  margin-top: 10px;
+  padding: 5px 0;
+  width: 351px;
+}
+
+.potcreate .text-container-3 {
+  height: 18px;
+  margin-right: 4.0px;
+  position: relative;
+  width: 331px;
+}
+
+.potcreate .text-114 {
+  height: 18px;
+  left: 0;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 97px;
+}
+
+.potcreate .text-116 {
+  height: 18px;
+  left: 81px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.potcreate .view-5 {
+  align-items: center;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 90px;
+  margin-left: 1.0px;
+  margin-top: 10px;
+  width: 351px;
+}
+
+.potcreate .text-container-4 {
+  align-items: center;
+  display: flex;
+  min-width: 335px;
+}
+
+.potcreate .text-118 {
+  height: 18px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  margin-bottom: 8.0px;
+  white-space: nowrap;
+  width: 97px;
+}
+
+.potcreate .text-120 {
+  color: var(--gunsmoke);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  height: 36px;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+  width: 238px;
+}
+
+.potcreate .view-6 {
+  align-items: flex-start;
+  background-color: var(--tropical-rain-forest);
+  border: 1px none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  height: 72px;
+  margin-right: 10.0px;
+  margin-top: 29px;
+  overflow: hidden;
+  padding: 22.9px 15px;
+  width: 306px;
+}
+
+.potcreate .text-117 {
+  color: #fcfcfe;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  height: 23px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 276px;
+}
+
+
+/* screen - 413_929 */
+
+.gender-picker-nopro {
+  align-items: flex-start;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.only-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 165.5px;
+  position: relative;
+}
+
+.only {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.colornopro-option {
+  background-color: var(--tropical-rain-forest);
+  border: 0.5px solid;
+  border-color: var(--black-2);
+  border-radius: 7px;
+  box-shadow: 0px 3px 1px #0000000a , 0px 3px 8px #0000001f;
+  flex: 1;
+  height: 29px;
+  margin-bottom: -0.50px;
+  margin-top: -0.50px;
+  min-width: 166.5px;
+  position: relative;
+}
+
+.colornopro {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+/* screen - 413_930 */
+
+.gender-picker-only {
+  align-items: flex-start;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.coloronly-option {
+  background-color: var(--tropical-rain-forest);
+  border: 0.5px solid;
+  border-color: var(--black-2);
+  border-radius: 7px;
+  box-shadow: 0px 3px 1px #0000000a , 0px 3px 8px #0000001f;
+  flex: 1;
+  height: 29px;
+  margin-bottom: -0.50px;
+  margin-left: -0.50px;
+  margin-top: -0.50px;
+  min-width: 166.5px;
+  position: relative;
+}
+
+.coloronly {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.nopro-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 165.5px;
+  position: relative;
+}
+
+.nopro {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+/* screen - 413_927 */
+
+.pickup-picker-middle {
+  align-items: flex-start;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.x-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 110.33px;
+  position: relative;
+}
+
+.separator {
+  background-color: var(--ship-gray);
+  border: 0px none;
+  border-radius: 0.5px;
+  height: 16px;
+  left: 108px;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.mythome {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.others {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.colormiddle-option {
+  background-color: var(--tropical-rain-forest);
+  border: 0.5px solid;
+  border-color: var(--black-2);
+  border-radius: 7px;
+  box-shadow: 0px 3px 1px #0000000a , 0px 3px 8px #0000001f;
+  flex: 1;
+  height: 29px;
+  margin-bottom: -0.50px;
+  margin-top: -0.50px;
+  min-width: 111.33px;
+  position: relative;
+}
+
+.colormiddle {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+/* screen - 413_925 */
+
+.pickup-picker-myhome {
+  align-items: flex-start;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.colormyhome-option {
+  background-color: var(--tropical-rain-forest);
+  border: 0.5px solid;
+  border-color: var(--black-2);
+  border-radius: 7px;
+  box-shadow: 0px 3px 1px #0000000a , 0px 3px 8px #0000001f;
+  flex: 1;
+  height: 29px;
+  margin-bottom: -0.50px;
+  margin-left: -0.50px;
+  margin-top: -0.50px;
+  min-width: 111.33px;
+  position: relative;
+}
+
+.colormyhome {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.x-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 110.33px;
+  position: relative;
+}
+
+.separator {
+  background-color: var(--ship-gray);
+  border: 0px none;
+  border-radius: 0.5px;
+  height: 16px;
+  left: 108px;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.others {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.middle {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+/* screen - 413_926 */
+
+.pickup-picker-others {
+  align-items: flex-start;
+  background-color: var(--rolling-stone);
+  border: 0px none;
+  border-radius: 8px;
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+  padding: 2px;
+  width: 335px;
+}
+
+.e-option {
+  border: 1px none;
+  border-radius: 7px;
+  flex: 1;
+  height: 28px;
+  min-width: 110.33px;
+  position: relative;
+}
+
+.separator {
+  background-color: var(--ship-gray);
+  border: 0px none;
+  border-radius: 0.5px;
+  height: 16px;
+  left: 108px;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.myhome {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.colorothers-option {
+  background-color: var(--tropical-rain-forest);
+  border: 0.5px solid;
+  border-color: var(--black-2);
+  border-radius: 7px;
+  box-shadow: 0px 3px 1px #0000000a , 0px 3px 8px #0000001f;
+  flex: 1;
+  height: 29px;
+  margin-bottom: -0.50px;
+  margin-top: -0.50px;
+  min-width: 111.33px;
+  position: relative;
+}
+
+.colorothers {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+  width: 94px;
+}
+
+.middle {
+  height: 16px;
+  left: 8px;
+  letter-spacing: -0.08px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 94px;
 }
 
 </style>

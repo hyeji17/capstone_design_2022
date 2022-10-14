@@ -1,13 +1,12 @@
 <template>
   <v-container>
- <input type="hidden" id="anPageName" name="page" value="annaecang1" />
+ <input type="hidden" id="anPageName" name="page" value="information-window" />
     <div class="container-center-horizontal">
-      <div class="annaecang1 screen">
+      <div class="information-window screen">
         <div class="flex-row">
           <img class="icon" src="img/icon-1@2x.svg" alt="Icon" />
-          <!-- <div class="skip">Skip</div> -->
         </div>
-        <div class="text-28">배달팟의 주인장과 팟원이 되어보세요!</div>
+        <div class="text-23">배달팟의 주인장과 팟원이 되어보세요!</div>
         <div class="group-389">
           <div class="ellipse-container">
             <img class="ellipse-5" src="img/ellipse-5@2x.svg" alt="Ellipse 5" />
@@ -20,17 +19,17 @@
             <img class="ellipse-9" src="img/ellipse-9@2x.svg" alt="Ellipse 9" />
           </div>
         </div>
-        <p class="text-29 valign-text-middle">
+        <p class="text-24 valign-text-middle" style="margin-top:30px; position:relative;">
           ‘주인장&#39; : 배달팟을 모으기 위해 팟을 개설한 이용자<br />‘팟원’ : 근거리의 주인장이 개설한 배달팟에 참여한
           배달팟의 일원
         </p>
-        <div class="group-458">
+        <div class="button">
           <a href="/signup">
-            <div class="button"><div class="create-an-account dmsans-bold-white-14px">회원가입</div></div></a
-          >
+            <div class="signup"><div class="create-an-account dmsans-bold-white-14px">회원가입</div></div>
+          </a>
           <a href="/login">
-            <div class="button-1"><div class="create-an-account-1">로그인</div></div></a
-          >
+            <div class="signin"><div class="create-an-account-1">로그인</div></div>
+          </a>
         </div>
 
       </div>
@@ -44,53 +43,52 @@ export default {
 </script>
 
 <style scoped>
-@import url('../../public/css/annaecang1.css');
-/* screen - annaecang1 */
+/* screen - information-window */
 
-/* .annaecang1 {
+.information-window {
   align-items: center;
   background-color: #f7fbff;
   border: 1px none;
   display: flex;
   flex-direction: column;
   height: 812px;
-  padding: 27px 19px;
+  padding: 67px 19px;
   width: 375px;
 }
 
-.annaecang1 .flex-row {
+.information-window .flex-row {
   align-items: flex-start;
   align-self: flex-end;
   display: flex;
+  gap: 107px;
   height: 24px;
   margin-right: 11px;
   min-width: 174px;
 }
 
-.annaecang1 .icon {
+.information-window .icon {
   align-self: flex-end;
   height: 23px;
   width: 34px;
 }
 
-.annaecang1 .skip {
+.information-window .skip {
   color: #fa5a1e;
-  font-family: var(--font-family-sk-modernist-bold);
+  font-family: var(--font-family-dm_sans);
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.16px;
   line-height: 24px;
-  margin-left: 107px;
   min-height: 24px;
   min-width: 33px;
   text-align: right;
   white-space: nowrap;
 }
 
-.annaecang1 .text-28 {
+.information-window .text-23 {
   color: var(--eerie-black);
   font-family: var(--font-family-dm_sans);
-  font-size: var(--font-size-xxxxl);
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.66px;
   margin-right: 1.0px;
@@ -100,7 +98,7 @@ export default {
   text-align: center;
 }
 
-.annaecang1 .group-389 {
+.information-window .group-389 {
   align-items: flex-end;
   display: flex;
   height: 267px;
@@ -109,7 +107,7 @@ export default {
   min-width: 335px;
 }
 
-.annaecang1 .ellipse-container {
+.information-window .ellipse-container {
   height: 344px;
   margin-bottom: -76.83px;
   margin-left: -1px;
@@ -117,7 +115,7 @@ export default {
   width: 336px;
 }
 
-.annaecang1 .ellipse-5 {
+.information-window .ellipse-5 {
   height: 89px;
   left: 1px;
   position: absolute;
@@ -125,7 +123,7 @@ export default {
   width: 90px;
 }
 
-.annaecang1 .ellipse-12 {
+.information-window .ellipse-12 {
   height: 332px;
   left: 0;
   object-fit: cover;
@@ -134,7 +132,7 @@ export default {
   width: 332px;
 }
 
-.annaecang1 .ellipse-6 {
+.information-window .ellipse-6 {
   height: 170px;
   left: 80px;
   position: absolute;
@@ -142,7 +140,7 @@ export default {
   width: 171px;
 }
 
-.annaecang1 .ellipse-7 {
+.information-window .ellipse-7 {
   height: 78px;
   left: 240px;
   position: absolute;
@@ -150,7 +148,7 @@ export default {
   width: 78px;
 }
 
-.annaecang1 .ellipse-8 {
+.information-window .ellipse-8 {
   height: 52px;
   left: 23px;
   position: absolute;
@@ -158,7 +156,7 @@ export default {
   width: 52px;
 }
 
-.annaecang1 .ellipse-10 {
+.information-window .ellipse-10 {
   height: 42px;
   left: 135px;
   position: absolute;
@@ -166,7 +164,7 @@ export default {
   width: 41px;
 }
 
-.annaecang1 .ellipse-11 {
+.information-window .ellipse-11 {
   height: 27px;
   left: 75px;
   object-fit: cover;
@@ -175,7 +173,7 @@ export default {
   width: 27px;
 }
 
-.annaecang1 .ellipse-9 {
+.information-window .ellipse-9 {
   height: 68px;
   left: 268px;
   position: absolute;
@@ -183,11 +181,11 @@ export default {
   width: 68px;
 }
 
-.annaecang1 .text-29 {
+.information-window .text-24 {
   align-self: flex-end;
   color: var(--gunsmoke);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-s);
   font-weight: 300;
   height: 65px;
   letter-spacing: 0;
@@ -196,22 +194,22 @@ export default {
   width: 333px;
 }
 
-.annaecang1 .group-458 {
+.information-window .button {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   margin-top: 61px;
   min-height: 125px;
   width: 335px;
 }
 
-.annaecang1 .button {
+.information-window .signup {
   align-items: flex-start;
   background: linear-gradient(180deg, rgb(249.26, 135.89, 31.24) 0%, rgb(255, 119.34, 76.5) 100%);
   border: 1px none;
   border-radius: 20px;
   box-shadow: 0px 10px 30px #c942101a;
-  cursor: pointer;
   display: flex;
   gap: 10px;
   justify-content: space-around;
@@ -219,7 +217,7 @@ export default {
   width: 335px;
 }
 
-.annaecang1 .create-an-account {
+.information-window .create-an-account {
   letter-spacing: -0.14px;
   line-height: 21.3px;
   margin-top: -1.00px;
@@ -228,21 +226,19 @@ export default {
   width: fit-content;
 }
 
-.annaecang1 .button-1 {
+.information-window .signin {
   align-items: flex-start;
   border: 1px none;
   border-radius: 20px;
   box-shadow: 0px 10px 30px #c942101a;
-  cursor: pointer;
   display: flex;
   gap: 10px;
   justify-content: space-around;
-  margin-top: 20px;
   padding: 15px 20px;
   width: 335px;
 }
 
-.annaecang1 .create-an-account-1 {
+.information-window .create-an-account-1 {
   color: var(--red-orange);
   font-family: var(--font-family-dm_sans);
   font-size: 16px;
@@ -253,6 +249,6 @@ export default {
   text-align: center;
   white-space: nowrap;
   width: fit-content;
-} */
+}
 
 </style>

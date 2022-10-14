@@ -60,7 +60,7 @@ export default {
     // db에서 pots 가져오기
     const dbRef = query(ref(this.db, `pots`, orderByChild('uid'), equalTo(this.auth.currentUser?.uid)))
     onValue(dbRef, (snapshot) => {
-      alert('누군가 참여')
+      // alert('누군가 참여')
       this.pot = snapshot.val()
       console.log(this.pot)
       // off(dbRef)

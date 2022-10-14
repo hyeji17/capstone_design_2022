@@ -10,7 +10,7 @@
           <div class="flex-row">
             <div class="flex-col-1">
               <div class="ation-container">
-                <a href="javascript:history.back()"
+                <a href="/pothomescreen"
                   ><img
                     class="variants-navigation-button"
                     src="img/variants-navigation-button-3@2x.svg"
@@ -19,13 +19,13 @@
                 </a>
                 <div class="location">
                   <div class="text-container-1">
-                    <div class="text-37 valign-text-middle dmsans-normal-eerie-black-14px">위치</div>
-                    <div class="text-38 valign-text-middle dmsans-normal-red-orange-15px">우리집</div>
+                    <div class="text-70 valign-text-middle dmsans-normal-eerie-black-14px">위치</div>
+                    <div class="text-71 valign-text-middle dmsans-normal-red-orange-15px">우리집</div>
                   </div>
                   <img class="vector-2" src="img/vector-2@2x.svg" alt="Vector 2" />
                 </div>
               </div>
-              <div class="text-39 valign-text-middle">근처의 팟을 찾아보세요!</div>
+              <div class="text-72 valign-text-middle">근처의 팟을 찾아보세요!</div>
             </div>
             <div class="filter"><img class="filter-icon" src="img/filter-icon@2x.svg" alt="Filter Icon" /></div>
           </div>
@@ -43,10 +43,9 @@
               </div>
             </div></a
           > -->
-          <div class="overlap-group-2" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?potid=${index}`)">
+          <div class="overlap-group-1" v-for="(pot, index) in pots" :key="index" @click="$router.push(`/potpost?potid=${index}`)">
             <div class="group-43">
-          
-              <div class="overlap-group-1"><div class="text-4 dmsans-bold-black-24px">{{categories[pot.category]}} </div></div>
+              <div class="overlap-group"><div class="x1" > <img :src = "categories[pot.category]" /></div></div>
               <div class="text-container">
                 <div class="text dmsans-bold-scarpa-flow-18px">{{pot.title}}</div>
                 <div class="text-1 dmsans-normal-scarpa-flow-15px">{{sexes[pot.sex]}} / {{pickups[pot.pickup]}}</div>
@@ -54,36 +53,6 @@
             </div>
             <div class="text-2 poppins-bold-tropical-rain-forest-20px">{{pot.headcount}}/{{pot.max}}</div>
           </div>
-          <!-- <div class="overlap-group-2">
-            <div class="group-43">
-              <div class="hansik"><img class="x1" src="img/---------1-1@2x.png" alt="1" /></div>
-              <div class="text-container">
-                <div class="text dmsans-bold-scarpa-flow-18px">제목</div>
-                <div class="text-1 dmsans-normal-scarpa-flow-15px">선호성별/픽업방식/거리</div>
-              </div>
-            </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">2/3</div>
-          </div>
-          <div class="overlap-group-2">
-            <div class="group-43">
-              <div class="hansik"><img class="x1-1" src="img/---------1-1@2x.png" alt="1" /></div>
-              <div class="text-container">
-                <div class="text dmsans-bold-scarpa-flow-18px">제목</div>
-                <div class="text-1 dmsans-normal-scarpa-flow-15px">선호성별/픽업방식/거리</div>
-              </div>
-            </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">1/2</div>
-          </div>
-          <div class="overlap-group-2">
-            <div class="group-43">
-              <div class="hansik"><img class="x1-2" src="img/---------1-1@2x.png" alt="1" /></div>
-              <div class="text-container">
-                <div class="text dmsans-bold-scarpa-flow-18px">제목</div>
-                <div class="text-1 dmsans-normal-scarpa-flow-15px">선호성별/픽업방식/거리</div>
-              </div>
-            </div>
-            <div class="text-2 poppins-bold-tropical-rain-forest-20px">4/6</div>
-          </div> -->
         </div>
         <a href="/potcreate">
           <div class="edit-icon">
@@ -93,28 +62,26 @@
           <div class="overlap-group7">
             <div class="group-411">
               <div class="iconly-light-search">
-                <div class="overlap-group-3">
+                <div class="overlap-group-2">
                   <div class="ellipse_739"></div>
-                  <img class="line_181" src="img/line-181-1@2x.svg" alt="Line_181" />
+                  <img class="line_181" src="img/line-181-3@2x.svg" alt="Line_181" />
                 </div>
               </div>
               <img class="group-411-item" src="img/chat-3@2x.svg" alt="chat" />
               <div class="iconly-light-search-1">
-                <div class="overlap-group-3">
+                <div class="overlap-group-2">
                   <div class="ellipse_739-1"></div>
-                  <img class="line_181" src="img/line-181@2x.svg" alt="Line_181" />
+                  <img class="line_181" src="img/line-181-2@2x.svg" alt="Line_181" />
                 </div>
               </div>
               <img
                 class="iconly-light-notification"
-                src="img/iconly-light-notification-2@2x.svg"
+                src="img/iconly-light-notification@2x.svg"
                 alt="Iconly/Light/Notification"
               />
               <img class="group-411-item" src="img/profile-3@2x.svg" alt="profile" />
             </div>
-            <a href="home.html#home" data-turbolinks="false">
-              <div class="icon"><img class="icon-logo" src="img/icon-logo-2@2x.svg" alt="Icon/Logo" /></div
-            ></a>
+            <div class="icon"><img class="icon-logo" src="img/icon-logo-3@2x.svg" alt="Icon/Logo" /></div>
           </div>
         </div>
       </div>
@@ -148,18 +115,18 @@ export default{
     //   {key : "lunchbox", value : "도시락"},
     // ],
     categories:{
-      chicken : "🍗" ,
-      fastfood : "🍔",
-      pizza : "🍕" ,
-      japenesefood : "🍣",
+      chicken : "img/------1@2x.png" ,
+      fastfood : "img/--------1@2x.png",
+      pizza : "img/-----1@2x.png" ,
+      japenesefood : "img/-----1-1@2x.png",
       chinesefood : "img/---------1@2x.png",
-      dessert : "🍰",
+      dessert : "img/------1-1@2x.png",
       americanfood : "img/-------1@2x.png",
       koreanfood : "img/---------1-1@2x.png",
       bunsik : "img/---------1-2@2x.png",
       nightfood : "img/-------1-1@2x.png",
       asianfood : "img/---------2@2x.png",
-      lunchbox : "img/--------1@2x.png",
+      lunchbox : "img/--------1-1@2x.png",
     },
     sexes: {
       same: "동성",
@@ -249,7 +216,6 @@ export default{
 }
 
 .potparticipation .variants-navigation-button {
-  cursor: pointer;
   height: 80px;
   width: 75px;
 }
@@ -274,7 +240,7 @@ export default{
   width: 42px;
 }
 
-.potparticipation .text-37 {
+.potparticipation .text-70 {
   height: 21px;
   letter-spacing: -0.14px;
   line-height: 21.3px;
@@ -284,7 +250,7 @@ export default{
   white-space: nowrap;
 }
 
-.potparticipation .text-38 {
+.potparticipation .text-71 {
   height: 23px;
   letter-spacing: -0.15px;
   line-height: 22.8px;
@@ -300,11 +266,11 @@ export default{
   width: 8px;
 }
 
-.potparticipation .text-39 {
+.potparticipation .text-72 {
   align-self: flex-end;
   color: var(--masala);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxxxxl);
+  font-family: var(--font-family-dm_sans);
+  font-size: var(--font-size-xxxxl);
   font-weight: 700;
   height: 29px;
   letter-spacing: 0;
@@ -329,16 +295,9 @@ export default{
   width: 10px;
 }
 
-.potparticipation .post1 {
-  align-items: flex-start;
-  cursor: pointer;
-  display: flex;
-  margin-top: 20px;
-  min-width: 345px;
-}
-
-.potparticipation .overlap-group {
+.potparticipation .overlap-group1 {
   height: 73px;
+  margin-top: 20px;
   position: relative;
   width: 345px;
 }
@@ -354,7 +313,7 @@ export default{
   top: 0;
 }
 
-.potparticipation .overlap-group-1 {
+.potparticipation .overlap-group {
   align-items: flex-end;
   background-color: var(--desert-sand);
   border-radius: 50px;
@@ -364,7 +323,7 @@ export default{
   padding: 22.6px 19px;
 }
 
-.potparticipation .text-4 {
+.potparticipation .text-7 {
   letter-spacing: -0.72px;
   min-height: 26px;
   width: 26px;
@@ -405,7 +364,7 @@ export default{
   width: 72px;
 }
 
-.potparticipation .overlap-group-2 {
+.potparticipation .overlap-group-1 {
   height: 73px;
   margin-right: 0;
   margin-top: 9px;
@@ -460,6 +419,12 @@ export default{
   top: 599px;
 }
 
+.potparticipation .overlap-group6 {
+  height: 73px;
+  position: relative;
+  width: 345px;
+}
+
 .potparticipation .x1-3 {
   height: 30px;
   object-fit: cover;
@@ -472,7 +437,6 @@ export default{
   border: 1px none;
   border-radius: 15px;
   box-shadow: 0px 4px 4px #00000040;
-  cursor: pointer;
   display: flex;
   height: 60px;
   left: 288px;
@@ -500,7 +464,7 @@ export default{
 }
 
 .potparticipation .overlap-group7 {
-  background-image: url(../../public/img/rectangle-26-2@2x.svg); 
+  background-image: url(../../public/img/rectangle-26-3@2x.svg);
   background-size: 100% 100%;
   height: 123px;
   margin-top: -8.25px;
@@ -528,7 +492,7 @@ export default{
   padding: 1.2px 1.7px;
 }
 
-.potparticipation .overlap-group-3 {
+.potparticipation .overlap-group-2 {
   height: 21px;
   position: relative;
   width: 20px;
@@ -594,7 +558,6 @@ export default{
   border: 1px none;
   border-radius: 30px;
   box-shadow: 0px 4px 4px #00000040;
-  cursor: pointer;
   display: flex;
   height: 60px;
   left: 156px;

@@ -2,42 +2,48 @@
 <v-app>
   <v-main>
       <v-container>
-<input type="hidden" id="anPageName" name="page" value="screen" />
+<input type="hidden" id="anPageName" name="page" value="login" />
     <div class="container-center-horizontal">
-      <div class="screen screen" >
-        <div class="flex-col">
-          <!-- <div class="div" style="overflow-y: scroll; height: 800px;"> -->
-            <div style="overflow:auto; width:350px; height:800px;">
-          <img class="icon" src="img/icon-3@2x.svg" alt="Icon" />
-          <div class="text-59 dmsans-bold-eerie-black-24px">로그인</div>
-          <div class="text-60 dmsans-normal-masala-14px">전화번호로 로그인합니다.</div>
+      <div class="login screen" >
+        <div style="overflow:auto; width:350px; height:800px;"></div>
+        <div style="overflow:auto; width:350px; height:800px;"></div>
+        <img class="icon" src="img/icon-2@2x.svg" alt="Icon" />
+        <div class="text-37">로그인</div>
+        <div class="text-38">전화번호로 로그인합니다.</div>
         <v-form ref="formFirst">
           <div class = "PhoneNumber">
             <v-col>
-              <h6> 휴대전화 번호</h6>
-              <h6> -포함해서 입력하세요 ex. 010-1234-5678</h6>
-              <v-text-field v-model = "phonenum" label = "phonenum" :rules="[value => !!value || '전화번호를 입력 하세요.']" placeholder="010-1234-5678"></v-text-field>
+              <div class="title dmsans-normal-masala-12px">휴대전화번호</div>
+              <div class="text-38" style="margin-left:14px;position:relative;"> -포함해서 입력하세요 ex. 010-1234-5678</div>
+              <div class="overlap-group">
+                <div class="place-holder dmsans-normal-silver-chalice-14px">
+                  <v-text-field v-model = "phonenum" label = "phonenum" :rules="[value => !!value || '전화번호를 입력 하세요.']" placeholder="010-1234-5678" style="margin-top:-18px; postion:relative;"></v-text-field>
+                </div>
+              </div>
               <div id = "recaptcha-container" ></div>
-              <v-btn @click="setKeyIdentifier()">인증받기</v-btn>
+              <v-btn @click="setKeyIdentifier()" style="margin-top:10px; margin-left:5px; position:relative;">인증받기</v-btn>
             </v-col>
           </div>
         </v-form>
         <v-form ref="formSecond">
           <div class = "IdentifierNum">
-            <v-col>
-              <h6>인증번호 입력</h6>
-              <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']"  placeholder="휴대전화로 발송된 인증번호 4자리를 입력하세요"></v-text-field>
-            </v-col>
-          <div class="form-1"> 
-          <div class="button" @click="Login()"><div class="login dmsans-bold-white-14px" style="top:-50px; postion:relative">로그인</div></div>
-          </div>
+            <div class="form-1"> 
+              <v-col>
+                <div class="title dmsans-normal-masala-12px">인증번호</div>
+                <div class="overlap-group" style="margin-top:10px; margin-left:-5px">
+                  <p class="place-holder dmsans-normal-silver-chalice-14px">
+                    <v-text-field v-model = "identifiernum" label = "identifier" :rules="[value => !!value || '인증번호를 입력 하세요.']"  placeholder="휴대전화로 발송된 인증번호 6자리를 입력하세요" style="margin-top:-18px; postion:relative;"></v-text-field>
+                  </p>
+                </div>             
+              </v-col>
+              <div class="login-button">
+                <div class="button" @click="Login()"><div class="login-1 dmsans-bold-white-14px">로그인</div></div>
+              </div>
+            </div>
           </div>
         </v-form>
-        <img class="job-finder-app-1" src="img/job-finder-app-1@1x.png" alt="job finder app 1" />
       </div>
       </div>
-      </div>
-    </div>
 
 <!-- 
         <v-form ref="formFirst">
@@ -140,9 +146,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import url("../../public/css/screen.css") */
-/* screen - screen */
-
 /* screen - login */
 
 .login {
@@ -163,11 +166,11 @@ export default {
   width: 34px;
 }
 
-.login .text-108 {
+.login .text-37 {
   align-self: flex-start;
   color: var(--eerie-black);
   font-family: var(--font-family-dm_sans);
-  font-size: var(--font-size-xxxxxl);
+  font-size: var(--font-size-xxxxl);
   font-weight: 700;
   letter-spacing: -0.72px;
   margin-left: 44px;
@@ -175,10 +178,10 @@ export default {
   min-height: 31px;
 }
 
-.login .text-109 {
+.login .text-38 {
   color: var(--masala);
   font-family: var(--font-family-dm_sans);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 19.2px;
@@ -243,7 +246,7 @@ export default {
 .login .place-holder-1 {
   color: var(--silver-chalice);
   font-family: var(--font-family-dm_sans);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 16.4px;
@@ -253,7 +256,6 @@ export default {
 
 .login .login-button {
   align-items: flex-start;
-  cursor: pointer;
   display: flex;
   height: 51px;
   margin-top: 289px;
@@ -281,6 +283,7 @@ export default {
   white-space: nowrap;
   width: fit-content;
 }
+
 
 
 </style>
