@@ -361,4 +361,7 @@ export default {
   width: 974px;
 }
 
+.signup ::-webkit-scrollbar{
+  display: none; /* Chrome, Safari, Opera */
+}
 </style>

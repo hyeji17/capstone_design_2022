@@ -1301,4 +1301,7 @@ color: var(--gunsmoke);
   width: 94px;
 }
 
+.potcreate ::-webkit-scrollbar{
+  display : none; /* Chrome, Safari, Opera */
+}
 </style>

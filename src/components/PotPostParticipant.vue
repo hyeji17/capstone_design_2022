@@ -50,7 +50,7 @@
             <div class="text valign-text-middle dmsans-normal-masala-13px">{{pot.openchat}}</div>
             <img class="partition-1" src="img/-partition@2x.svg" alt="partition" />
           </div>
-          <div class="bottombar">
+          <div class="bottombar" style="padding : 125px">
             <div class="overlap-group6">
               <div class="group-411">
                 <div class="iconly-light-search">
