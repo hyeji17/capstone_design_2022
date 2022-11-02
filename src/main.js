@@ -4,6 +4,7 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import { initializeApp } from "firebase/app";
 import { getDatabase } from 'firebase/database'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
